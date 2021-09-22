@@ -1,0 +1,23 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: vacuum-uuid
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: vacuum-uuid
+            envFrom:
+              - secretRef:
+                  name: db-10-14-uuid-creds
+            env:
+              - name: DBHOST
+                value: "af1adcd6040024feda9b7d87c2298e6f-fc266186a89a7e79.elb.us-west-2.amazonaws.com"
+            image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.2
+            imagePullPolicy: Always
+            command: ["/vacuum.sh"]
+          restartPolicy: OnFailure 
+        #hostNetwork: true

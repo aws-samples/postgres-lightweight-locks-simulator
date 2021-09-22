@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-update-from-sqs-db-10-14-seq
+  name: app-update-from-sqs-db-10-14-seq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-update-from-sqs-db-10-14-seq
+  template:
+    metadata:
+      labels:
+        app: app-update-from-sqs-db-10-14-seq
+    spec:
+      #nodeSelector:
+      #  lifecycle: Ec2Spot
+      containers:
+        - name: app-update-from-sqs-db-10-14-seq
+          envFrom:
+            - secretRef:
+                name: db-10-14-seq-creds
+          env:
+            - name: QUEUE_URL
+              value: "https://sqs.us-west-2.amazonaws.com/448389607377/delivery-id-db-10-14-seq"
+            - name: DBHOST
+              #value: "db-10-14-uuid.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
+              value: "ab06f341e1f474677ad49fcd3eadfbed-da6b60458fed2c70.elb.us-west-2.amazonaws.com"
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.2
+          imagePullPolicy: Always
+          command: ["/app-update-from-sqs.sh"]
+          resources:
+            requests:
+              cpu: 512m
+              memory: 512Mi
+      hostNetwork: true

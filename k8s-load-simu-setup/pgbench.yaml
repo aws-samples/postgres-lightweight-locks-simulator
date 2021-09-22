@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pgbench
+  name: pgbench
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pgbench
+  template:
+    metadata:
+      labels:
+        app: pgbench
+    spec:
+      #nodeSelector:
+      #  lifecycle: Ec2Spot
+      containers:
+        - name: pgbench
+          envFrom:
+            - secretRef:
+                name: db-9-6-creds
+          env:
+            - name: DBHOST
+              #value: "db-10-14-seq.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
+              value: "a57d8d5dca5564dec9f329b7346a1776-4110418bd54834a4.elb.us-west-2.amazonaws.com"
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.2
+          imagePullPolicy: Always
+          command: ["/start-pgbench.sh"]
+          resources:
+            requests:
+              cpu: 512m
+              memory: 512Mi
+      hostNetwork: true

@@ -1,0 +1,1502 @@
+SET
+SET
+psql:create-order-schema-seq.sql:167: ERROR:  table "orders1" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:170: ERROR:  table "orders2" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:173: ERROR:  table "orders3" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:176: ERROR:  table "orders4" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:179: ERROR:  table "orders5" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:182: ERROR:  table "orders6" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:185: ERROR:  table "orders7" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:188: ERROR:  table "orders8" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:191: ERROR:  table "orders9" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:194: ERROR:  sequence "orders1_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:197: ERROR:  sequence "orders1_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:200: ERROR:  sequence "orders1_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:203: ERROR:  sequence "orders1_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:216: ERROR:  sequence "orders2_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:219: ERROR:  sequence "orders2_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:222: ERROR:  sequence "orders2_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:225: ERROR:  sequence "orders2_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:238: ERROR:  sequence "orders3_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:241: ERROR:  sequence "orders3_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:244: ERROR:  sequence "orders3_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:247: ERROR:  sequence "orders3_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:260: ERROR:  sequence "orders4_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:263: ERROR:  sequence "orders4_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:266: ERROR:  sequence "orders4_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:269: ERROR:  sequence "orders4_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:282: ERROR:  sequence "orders5_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:285: ERROR:  sequence "orders5_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:288: ERROR:  sequence "orders5_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:291: ERROR:  sequence "orders5_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:304: ERROR:  sequence "orders6_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:307: ERROR:  sequence "orders6_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:310: ERROR:  sequence "orders6_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:313: ERROR:  sequence "orders6_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:326: ERROR:  sequence "orders7_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:329: ERROR:  sequence "orders7_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:332: ERROR:  sequence "orders7_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:335: ERROR:  sequence "orders7_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:348: ERROR:  sequence "orders8_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:350: ERROR:  sequence "orders8_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:352: ERROR:  sequence "orders8_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:354: ERROR:  sequence "orders8_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:367: ERROR:  sequence "orders9_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:369: ERROR:  sequence "orders9_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:371: ERROR:  sequence "orders9_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:373: ERROR:  sequence "orders9_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:386: ERROR:  table "orders10" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:389: ERROR:  table "orders11" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:392: ERROR:  table "orders12" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:395: ERROR:  table "orders13" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:398: ERROR:  table "orders14" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:401: ERROR:  table "orders15" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:404: ERROR:  table "orders16" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:407: ERROR:  table "orders17" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:410: ERROR:  table "orders18" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:413: ERROR:  table "orders19" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:416: ERROR:  sequence "orders10_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:418: ERROR:  sequence "orders10_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:420: ERROR:  sequence "orders10_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:422: ERROR:  sequence "orders10_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:436: ERROR:  sequence "orders11_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:438: ERROR:  sequence "orders11_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:440: ERROR:  sequence "orders11_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:442: ERROR:  sequence "orders11_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:460: ERROR:  sequence "orders12_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:462: ERROR:  sequence "orders12_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:464: ERROR:  sequence "orders12_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:466: ERROR:  sequence "orders12_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:479: ERROR:  sequence "orders13_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:481: ERROR:  sequence "orders13_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:483: ERROR:  sequence "orders13_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:485: ERROR:  sequence "orders13_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:498: ERROR:  sequence "orders14_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:500: ERROR:  sequence "orders14_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:502: ERROR:  sequence "orders14_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:504: ERROR:  sequence "orders14_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:517: ERROR:  sequence "orders15_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:519: ERROR:  sequence "orders15_pub_id_seq" does not exist
+psql:create-order-schema-seq.sql:520: ERROR:  relation "orders10_pub_id_seq" already exists
+psql:create-order-schema-seq.sql:521: ERROR:  sequence "orders15_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:523: ERROR:  sequence "orders15_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:536: ERROR:  sequence "orders16_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:538: ERROR:  sequence "orders16_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:540: ERROR:  sequence "orders16_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:542: ERROR:  sequence "orders16_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:555: ERROR:  sequence "orders17_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:557: ERROR:  sequence "orders17_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:559: ERROR:  sequence "orders17_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:561: ERROR:  sequence "orders17_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:574: ERROR:  sequence "orders18_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:576: ERROR:  sequence "orders18_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:578: ERROR:  sequence "orders18_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:580: ERROR:  sequence "orders18_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:593: ERROR:  sequence "orders19_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:595: ERROR:  sequence "orders19_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:597: ERROR:  sequence "orders19_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:599: ERROR:  sequence "orders19_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:612: ERROR:  table "orders20" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:615: ERROR:  table "orders21" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:618: ERROR:  table "orders22" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:621: ERROR:  table "orders23" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:624: ERROR:  table "orders24" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:627: ERROR:  table "orders25" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:630: ERROR:  table "orders26" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:633: ERROR:  table "orders27" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:636: ERROR:  table "orders28" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:639: ERROR:  table "orders29" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:642: ERROR:  sequence "orders20_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:644: ERROR:  sequence "orders20_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:646: ERROR:  sequence "orders20_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:648: ERROR:  sequence "orders20_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:662: ERROR:  sequence "orders21_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:664: ERROR:  sequence "orders21_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:666: ERROR:  sequence "orders21_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:668: ERROR:  sequence "orders21_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:686: ERROR:  sequence "orders22_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:688: ERROR:  sequence "orders22_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:690: ERROR:  sequence "orders22_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:692: ERROR:  sequence "orders22_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:705: ERROR:  sequence "orders23_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:707: ERROR:  sequence "orders23_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:709: ERROR:  sequence "orders23_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:711: ERROR:  sequence "orders23_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:724: ERROR:  sequence "orders24_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:726: ERROR:  sequence "orders24_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:728: ERROR:  sequence "orders24_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:730: ERROR:  sequence "orders24_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:743: ERROR:  sequence "orders25_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:745: ERROR:  sequence "orders25_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:747: ERROR:  sequence "orders25_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:749: ERROR:  sequence "orders25_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:762: ERROR:  sequence "orders26_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:764: ERROR:  sequence "orders26_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:766: ERROR:  sequence "orders26_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:768: ERROR:  sequence "orders26_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:781: ERROR:  sequence "orders27_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:783: ERROR:  sequence "orders27_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:785: ERROR:  sequence "orders27_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:787: ERROR:  sequence "orders27_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:800: ERROR:  sequence "orders28_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:802: ERROR:  sequence "orders28_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:804: ERROR:  sequence "orders28_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:806: ERROR:  sequence "orders28_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:819: ERROR:  sequence "orders29_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:821: ERROR:  sequence "orders29_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:823: ERROR:  sequence "orders29_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:825: ERROR:  sequence "orders29_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+psql:create-order-schema-seq.sql:839: ERROR:  table "orders30" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:842: ERROR:  table "orders31" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:845: ERROR:  table "orders32" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:848: ERROR:  table "orders33" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:851: ERROR:  table "orders34" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:854: ERROR:  table "orders35" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:857: ERROR:  table "orders36" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:860: ERROR:  table "orders37" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:863: ERROR:  table "orders38" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:866: ERROR:  table "orders39" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:869: ERROR:  sequence "orders30_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:871: ERROR:  sequence "orders30_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:873: ERROR:  sequence "orders30_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:875: ERROR:  sequence "orders30_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:889: ERROR:  sequence "orders31_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:891: ERROR:  sequence "orders31_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:893: ERROR:  sequence "orders31_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:895: ERROR:  sequence "orders31_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:913: ERROR:  sequence "orders32_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:915: ERROR:  sequence "orders32_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:917: ERROR:  sequence "orders32_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:919: ERROR:  sequence "orders32_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:932: ERROR:  sequence "orders33_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:934: ERROR:  sequence "orders33_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:936: ERROR:  sequence "orders33_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:938: ERROR:  sequence "orders33_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:951: ERROR:  sequence "orders34_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:953: ERROR:  sequence "orders34_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:955: ERROR:  sequence "orders34_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:957: ERROR:  sequence "orders34_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:970: ERROR:  sequence "orders35_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:972: ERROR:  sequence "orders35_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:974: ERROR:  sequence "orders35_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:976: ERROR:  sequence "orders35_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:989: ERROR:  sequence "orders36_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:991: ERROR:  sequence "orders36_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:993: ERROR:  sequence "orders36_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:995: ERROR:  sequence "orders36_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1008: ERROR:  sequence "orders37_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1010: ERROR:  sequence "orders37_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1012: ERROR:  sequence "orders37_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1014: ERROR:  sequence "orders37_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1027: ERROR:  sequence "orders38_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1029: ERROR:  sequence "orders38_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1031: ERROR:  sequence "orders38_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1033: ERROR:  sequence "orders38_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1046: ERROR:  sequence "orders39_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1048: ERROR:  sequence "orders39_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1050: ERROR:  sequence "orders39_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1052: ERROR:  sequence "orders39_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1066: ERROR:  table "orders40" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1069: ERROR:  table "orders41" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1072: ERROR:  table "orders42" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1075: ERROR:  table "orders43" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1078: ERROR:  table "orders44" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1081: ERROR:  table "orders45" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1084: ERROR:  table "orders46" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1087: ERROR:  table "orders47" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1090: ERROR:  table "orders48" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1093: ERROR:  table "orders49" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1096: ERROR:  sequence "orders40_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1098: ERROR:  sequence "orders40_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1100: ERROR:  sequence "orders40_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1102: ERROR:  sequence "orders40_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1116: ERROR:  sequence "orders41_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1118: ERROR:  sequence "orders41_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1120: ERROR:  sequence "orders41_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1122: ERROR:  sequence "orders41_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1136: ERROR:  sequence "orders42_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1138: ERROR:  sequence "orders42_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1140: ERROR:  sequence "orders42_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1142: ERROR:  sequence "orders42_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1155: ERROR:  sequence "orders43_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1157: ERROR:  sequence "orders43_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1159: ERROR:  sequence "orders43_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1161: ERROR:  sequence "orders43_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1174: ERROR:  sequence "orders44_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1176: ERROR:  sequence "orders44_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1178: ERROR:  sequence "orders44_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1180: ERROR:  sequence "orders44_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1193: ERROR:  sequence "orders45_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1195: ERROR:  sequence "orders45_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1197: ERROR:  sequence "orders45_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1199: ERROR:  sequence "orders45_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1212: ERROR:  sequence "orders46_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1214: ERROR:  sequence "orders46_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1216: ERROR:  sequence "orders46_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1218: ERROR:  sequence "orders46_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1231: ERROR:  sequence "orders47_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1233: ERROR:  sequence "orders47_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1235: ERROR:  sequence "orders47_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1237: ERROR:  sequence "orders47_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1250: ERROR:  sequence "orders48_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1252: ERROR:  sequence "orders48_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1254: ERROR:  sequence "orders48_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1256: ERROR:  sequence "orders48_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1269: ERROR:  sequence "orders49_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1271: ERROR:  sequence "orders49_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1273: ERROR:  sequence "orders49_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1275: ERROR:  sequence "orders49_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1289: ERROR:  table "orders50" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1292: ERROR:  table "orders51" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1295: ERROR:  table "orders52" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1298: ERROR:  table "orders53" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1301: ERROR:  table "orders54" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1304: ERROR:  table "orders55" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1307: ERROR:  table "orders56" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1310: ERROR:  table "orders57" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1313: ERROR:  table "orders58" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1316: ERROR:  table "orders59" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1319: ERROR:  sequence "orders50_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1321: ERROR:  sequence "orders50_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1323: ERROR:  sequence "orders50_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1325: ERROR:  sequence "orders50_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1339: ERROR:  sequence "orders51_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1341: ERROR:  sequence "orders51_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1343: ERROR:  sequence "orders51_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1345: ERROR:  sequence "orders51_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1359: ERROR:  sequence "orders52_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1361: ERROR:  sequence "orders52_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1363: ERROR:  sequence "orders52_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1365: ERROR:  sequence "orders52_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1378: ERROR:  sequence "orders53_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1380: ERROR:  sequence "orders53_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1382: ERROR:  sequence "orders53_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1384: ERROR:  sequence "orders53_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1397: ERROR:  sequence "orders54_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1399: ERROR:  sequence "orders54_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1401: ERROR:  sequence "orders54_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1403: ERROR:  sequence "orders54_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1416: ERROR:  sequence "orders55_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1418: ERROR:  sequence "orders55_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1420: ERROR:  sequence "orders55_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1422: ERROR:  sequence "orders55_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1435: ERROR:  sequence "orders56_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1437: ERROR:  sequence "orders56_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1439: ERROR:  sequence "orders56_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1441: ERROR:  sequence "orders56_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1454: ERROR:  sequence "orders57_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1456: ERROR:  sequence "orders57_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1458: ERROR:  sequence "orders57_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1460: ERROR:  sequence "orders57_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1473: ERROR:  sequence "orders58_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1475: ERROR:  sequence "orders58_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1477: ERROR:  sequence "orders58_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1479: ERROR:  sequence "orders58_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1492: ERROR:  sequence "orders59_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1494: ERROR:  sequence "orders59_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1496: ERROR:  sequence "orders59_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1498: ERROR:  sequence "orders59_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1512: ERROR:  table "orders60" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1515: ERROR:  table "orders61" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1518: ERROR:  table "orders62" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1521: ERROR:  table "orders63" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1524: ERROR:  table "orders64" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1527: ERROR:  table "orders65" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1530: ERROR:  table "orders66" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1533: ERROR:  table "orders67" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1536: ERROR:  table "orders68" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1539: ERROR:  table "orders69" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1542: ERROR:  sequence "orders60_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1544: ERROR:  sequence "orders60_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1546: ERROR:  sequence "orders60_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1548: ERROR:  sequence "orders60_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1562: ERROR:  sequence "orders61_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1564: ERROR:  sequence "orders61_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1566: ERROR:  sequence "orders61_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1568: ERROR:  sequence "orders61_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1582: ERROR:  sequence "orders62_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1584: ERROR:  sequence "orders62_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1586: ERROR:  sequence "orders62_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1588: ERROR:  sequence "orders62_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1601: ERROR:  sequence "orders63_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1603: ERROR:  sequence "orders63_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1605: ERROR:  sequence "orders63_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1607: ERROR:  sequence "orders63_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1620: ERROR:  sequence "orders64_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1622: ERROR:  sequence "orders64_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1624: ERROR:  sequence "orders64_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1626: ERROR:  sequence "orders64_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1639: ERROR:  sequence "orders65_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1641: ERROR:  sequence "orders65_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1643: ERROR:  sequence "orders65_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1645: ERROR:  sequence "orders65_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1658: ERROR:  sequence "orders66_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1660: ERROR:  sequence "orders66_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1662: ERROR:  sequence "orders66_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1664: ERROR:  sequence "orders66_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1677: ERROR:  sequence "orders67_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1679: ERROR:  sequence "orders67_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1681: ERROR:  sequence "orders67_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1683: ERROR:  sequence "orders67_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1696: ERROR:  sequence "orders68_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1698: ERROR:  sequence "orders68_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1700: ERROR:  sequence "orders68_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1702: ERROR:  sequence "orders68_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1715: ERROR:  sequence "orders69_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1717: ERROR:  sequence "orders69_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1719: ERROR:  sequence "orders69_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1721: ERROR:  sequence "orders69_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1735: ERROR:  table "orders70" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1738: ERROR:  table "orders71" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1741: ERROR:  table "orders72" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1744: ERROR:  table "orders73" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1747: ERROR:  table "orders74" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1750: ERROR:  table "orders75" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1753: ERROR:  table "orders76" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1756: ERROR:  table "orders77" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1759: ERROR:  table "orders78" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1762: ERROR:  table "orders79" does not exist
+SELECT 0
+psql:create-order-schema-seq.sql:1765: ERROR:  sequence "orders70_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1767: ERROR:  sequence "orders70_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1769: ERROR:  sequence "orders70_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1771: ERROR:  sequence "orders70_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1785: ERROR:  sequence "orders71_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1787: ERROR:  sequence "orders71_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1789: ERROR:  sequence "orders71_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1791: ERROR:  sequence "orders71_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1805: ERROR:  sequence "orders72_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1807: ERROR:  sequence "orders72_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1809: ERROR:  sequence "orders72_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1811: ERROR:  sequence "orders72_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1824: ERROR:  sequence "orders73_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1826: ERROR:  sequence "orders73_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1828: ERROR:  sequence "orders73_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1830: ERROR:  sequence "orders73_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1843: ERROR:  sequence "orders74_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1845: ERROR:  sequence "orders74_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1847: ERROR:  sequence "orders74_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1849: ERROR:  sequence "orders74_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1862: ERROR:  sequence "orders75_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1864: ERROR:  sequence "orders75_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1866: ERROR:  sequence "orders75_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1868: ERROR:  sequence "orders75_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1881: ERROR:  sequence "orders76_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1883: ERROR:  sequence "orders76_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1885: ERROR:  sequence "orders76_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1887: ERROR:  sequence "orders76_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1900: ERROR:  sequence "orders77_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1902: ERROR:  sequence "orders77_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1904: ERROR:  sequence "orders77_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1906: ERROR:  sequence "orders77_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1919: ERROR:  sequence "orders78_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1921: ERROR:  sequence "orders78_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1923: ERROR:  sequence "orders78_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1925: ERROR:  sequence "orders78_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX
+psql:create-order-schema-seq.sql:1938: ERROR:  sequence "orders79_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1940: ERROR:  sequence "orders79_pub_id_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1942: ERROR:  sequence "orders79_idemp_seq" does not exist
+CREATE SEQUENCE
+psql:create-order-schema-seq.sql:1944: ERROR:  sequence "orders79_uuid_seq" does not exist
+CREATE SEQUENCE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+CREATE INDEX
+CREATE INDEX

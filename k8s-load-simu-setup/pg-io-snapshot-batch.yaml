@@ -1,0 +1,30 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: pg-io-snapshot
+spec:
+  schedule: "* */1 * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: pg-io-snapshot
+            envFrom:
+              - secretRef:
+                  name: db-10-14-uuid-creds
+            env:
+              - name: DBID
+                value: "db-10-14-uuid"
+              - name: SA_SNAPPER_DB_LIST
+                value: "postgres"
+              - name: SA_SNAPPER_INT
+                value: "5"
+              - name: SA_SNAPPER_NO_SNAPSHOT
+                value: "12"
+            image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.2
+            imagePullPolicy: Always
+            command: ["/pg-io-snapshot.sh"]
+          restartPolicy: Never 
+        #hostNetwork: true

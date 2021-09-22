@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: appupdate-1
+  name: appupdate-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appupdate-1
+  template:
+    metadata:
+      labels:
+        app: appupdate-1
+    spec:
+      #nodeSelector:
+      #  lifecycle: Ec2Spot
+      containers:
+        - name: appupdate-1
+          envFrom:
+            - secretRef:
+                name: db-9-6-creds
+          env:
+            - name: UPDATE_ORDER_RANGE
+              value: "200"
+            - name: MIN_SLEEP_BETWEEN_UPDATES
+              value: "100"
+            - name: MAX_SLEEP_BETWEEN_UPDATES
+              value: "200"
+            - name: QUEUE_URL
+              value: "https://sqs.us-west-2.amazonaws.com/448389607377/delivery-id-db-10-14-seq"
+            - name: NUM_OF_SINGLE_INSERTS
+              value: "70"
+            - name: DBHOST
+              #value: "db-10-14-seq.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
+              value: "a57d8d5dca5564dec9f329b7346a1776-4110418bd54834a4.elb.us-west-2.amazonaws.com"
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.2
+          imagePullPolicy: Always
+          command: ["/app-update-1.sh"]
+          resources:
+            requests:
+              cpu: 512m
+              memory: 512Mi
+      hostNetwork: true

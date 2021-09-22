@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pg-io-snapshot
+  name: pg-io-snapshot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pg-io-snapshot
+  template:
+    metadata:
+      labels:
+        app: pg-io-snapshot
+    spec:
+      #nodeSelector:
+      #  lifecycle: Ec2Spot
+      containers:
+        - name: pg-io-snapshot
+          envFrom:
+            - secretRef:
+                name: db-10-14-uuid-creds
+          env:
+              - name: BUCKET
+                value: "db-10-14-uuid"
+              - name: DBID
+                value: "db-10-14-uuid"
+              - name: SA_SNAPPER_DB_LIST
+                value: "postgres"
+              - name: SA_SNAPPER_INT
+                value: "5"
+              - name: SA_SNAPPER_NO_SNAPSHOT
+                value: "12"
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.2
+          imagePullPolicy: Always
+          command: ["/pg-io-snapshot.sh"]
+      hostNetwork: true

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+        <div class="mw6 center pa3 sans-serif">
+
+            <h1 class="mb4">Order: {{ order.uuid | linebreaks }}</h1>
+            <h2 class="mb4">Created at: {{ order.created_at | linebreaks }}</h2>
+            <h2 class="mb4">Updated at: {{ order.updated_at | linebreaks }}</h2>
+            <h2 class="mb4">Product UUID: {{ order.product | linebreaks }}</h2>
+
+            <h1 class="mb4">Delivery: {{ delivery.uuid | linebreaks }}</h1>
+        {% for d in deliveries %}
+           <div class="pa2 mb3 striped--near-white">
+              <div class="pl2">
+                 <p class="mb2">created_at: {{ d.created_at }}</p>
+                 <p class="mb2">updated_at: {{ d.updated_at }}</p>
+                 <p class="mb2">method: {{ d.method }}</p>
+                 <p class="mb2">status: {{ d.status }}</p>
+              </div>
+           </div>
+        {% endfor %}
+        </div>
+
+{% endblock %}

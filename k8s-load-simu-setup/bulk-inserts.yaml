@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bulk-inserts
+  name: bulk-inserts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bulk-inserts
+  template:
+    metadata:
+      labels:
+        app: bulk-inserts
+    spec:
+      #nodeSelector:
+      #  lifecycle: Ec2Spot
+      containers:
+        - name: bulk-inserts
+          envFrom:
+            - secretRef:
+                name: db-9-6-creds
+          env:
+            - name: NUM_OF_SINGLE_INSERTS
+              value: "42"
+            - name: DBHOST
+              value: "db-9-6.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.2
+          imagePullPolicy: Always
+          command: ["/bulk-inserts.sh"]
+          resources:
+            requests:
+              cpu: 512m
+              memory: 512Mi
+      hostNetwork: true
