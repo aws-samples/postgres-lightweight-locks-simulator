@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+      <div class="mw6 center pa3 sans-serif">
+         <h1 class="mb4">Today's Order:</h1>
+      </div>
+
+        {% for order in orders %}
+            <h2 class="mb4">Order: {{ order.uuid }} Created at: {{ order.created_at }} Updated at: {{ order.updated_at }} Product UUID: {{ order.product }}</h2>
+        {% endfor %}
+
+{% endblock %}

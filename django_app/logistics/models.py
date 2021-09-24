@@ -23,7 +23,6 @@ class Order(PostgresPartitionedModel):
   created_at = models.DateField(null=False)
   updated_at = models.DateField(null=False)
   product = models.UUIDField(null=False)
-
   merchant  = models.ForeignKey("Merchant", on_delete=models.CASCADE,null=True)
   customer = models.ForeignKey("Customer", on_delete=models.CASCADE,null=True)
 

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+        <div class="mw6 center pa3 sans-serif">
+
+            <h1 class="mb4">SDK: {{ name | linebreaks }}</h1>
+
+            <h1 class="mb4">APIS: {{  linebreaks }}</h1>
+        {% for d in apis %}
+           <div class="pa2 mb3 striped--near-white">
+              <div class="pl2">
+                 <p class="mb2">{{ d }}</p>
+              </div>
+           </div>
+        {% endfor %}
+        </div>
+
+{% endblock %}

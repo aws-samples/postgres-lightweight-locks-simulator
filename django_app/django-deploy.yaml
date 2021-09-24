@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: 092704680950.dkr.ecr.us-west-2.amazonaws.com/djangoapp:0.1
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/djangoapp:0.1
           imagePullPolicy: Always
           resources:
             requests:
