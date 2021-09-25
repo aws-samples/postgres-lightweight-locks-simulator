@@ -44,4 +44,32 @@ insert into logistics_merchant(uuid,name,address,license) select uuid_generate_v
 insert into logistics_order(uuid,created_at,updated_at,product,customer_id,merchant_id) select uuid_generate_v4(),NOW(),NOW(),uuid_generate_v4(),*,* from generate_series(1,100);
 insert into logistics_delivery(uuid,created_at,updated_at,method,order_id) select uuid_generate_v4(),NOW(),NOW(),md5(RANDOM()::TEXT),* from generate_series(1,100);
 ```
+### Configure secure ALB access
+
+#### eks cluster prep
+
+Create ECR
+
+```bash
+./create-ecr-repos.sh
+```
+Build the logisitics application docker image
+
+```bash
+./build
+```
+
+Execute step 1, 2, and 3 in https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html
+
+Provision a certificate with ACM and reference it in `django-ingres.yaml`
+
+
+Deploy to eks:
+
+```bash
+kubectl apply -f django-deploy.yaml
+kubectl apply -f django-svc.yaml
+kubectl apply -f django-ingres.yaml
+```
+
 

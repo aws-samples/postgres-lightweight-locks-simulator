@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-o1-5pv*i%q^32bdg)(c0unoytsgck+1%dgd)o7d0_bz-*vln3&
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'a7ce224956a9f445798ac2033cb5cdca-1309431951.us-west-2.elb.amazonaws.com',
+    'k8s-default-djangoin-68598ef3d7-1208885910.us-west-2.elb.amazonaws.com',
     '127.0.0.1',
+    'pastry.yahav.sa.aws.dev',
 ]
 
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sslserver',
     'psqlextra',
     'logistics',
 ]

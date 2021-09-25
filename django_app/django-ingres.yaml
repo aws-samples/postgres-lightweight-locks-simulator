@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: django-ingres
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/backend-protocol: HTTPS
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:448389607377:certificate/175f723e-36cb-40c0-ae85-b421839cf206
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /logistics
+            pathType: Prefix
+            backend:
+              service:
+                name: django-svc
+                port: 
+                  number: 443

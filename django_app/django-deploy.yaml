@@ -28,8 +28,8 @@ spec:
               memory: 512Mi
           ports:
             - containerPort: 8000
-          livenessProbe:
-            tcpSocket:
-              port: 8000
-            periodSeconds: 60
+          #livenessProbe:
+          #  tcpSocket:
+          #    port: 8000
+          #  periodSeconds: 60
 

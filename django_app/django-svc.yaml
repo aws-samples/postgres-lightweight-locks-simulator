@@ -6,6 +6,6 @@ spec:
   selector:
     app: django-app
   ports:
-    - port: 80
+    - port: 443
       targetPort: 8000
-  type: LoadBalancer
+  type: NodePort
