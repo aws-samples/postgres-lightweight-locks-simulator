@@ -22,35 +22,8 @@ do
   else
     psql -A -e -t -U postgres -w -c "
 begin;
+update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where id = "$id" ;
 update orders1 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders1) for update skip locked);
-update orders2 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders2) for update skip locked);
-update orders3 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders3) for update skip locked);
-update orders4 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders4) for update skip locked);
-update orders5 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders5) for update skip locked);
-update orders6 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders6) for update skip locked);
-update orders7 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders7) for update skip locked);
-update orders8 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders8) for update skip locked);
-update orders9 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders9) for update skip locked);
-update orders10 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders10) for update skip locked);
-update orders11 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders11) for update skip locked);
-update orders12 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders12) for update skip locked);
-update orders13 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders13) for update skip locked);
-update orders14 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders14) for update skip locked);
-update orders15 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders15) for update skip locked);
-update orders16 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders16) for update skip locked);
-update orders17 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders17) for update skip locked);
-update orders18 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders18) for update skip locked);
-update orders19 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders19) for update skip locked);
-update orders20 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders20) for update skip locked);
-update orders21 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders21) for update skip locked);
-update orders22 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders22) for update skip locked);
-update orders23 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders23) for update skip locked);
-update orders24 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders24) for update skip locked);
-update orders25 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders25) for update skip locked);
-update orders26 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders26) for update skip locked);
-update orders27 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders27) for update skip locked);
-update orders28 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders28) for update skip locked);
-update orders29 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders29) for update skip locked);
 commit;"
     echo "psql exit code="$?
     if (( $?>0 )) 

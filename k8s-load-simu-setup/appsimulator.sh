@@ -1,5 +1,5 @@
 #!/bin/bash
-
+/init.sh
 #restore simulator state from SQS in the case of previous run
 sqs_file="/tmp/"$RANDOM".json"
 aws sqs receive-message --queue-url ${QUEUE_URL} > $sqs_file
@@ -45,7 +45,7 @@ for i in $_seq; do
 
 #handle pgbench spike case
   if (( $(echo "$i == 1.41" | bc -l ))) ; then
-    kubectl scale deploy pgbench --replicas=10  
+    kubectl scale deploy pgbench --replicas=1  
   else
     kubectl scale deploy pgbench --replicas=0  
   fi
