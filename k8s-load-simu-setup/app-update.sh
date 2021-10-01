@@ -1,4 +1,5 @@
 #!/bin/bash 
+/init.sh
 while true
 do
 # /app-update-from-func.sh &

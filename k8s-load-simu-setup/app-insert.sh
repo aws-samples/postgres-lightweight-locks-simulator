@@ -1,5 +1,5 @@
 #!/bin/bash 
-
+/init.sh
 n=$NUM_OF_SINGLE_INSERTS
 for ((i=1 ; i<=$n ; i++))
 do

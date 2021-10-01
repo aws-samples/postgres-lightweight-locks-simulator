@@ -1,4 +1,3 @@
-/*
 CREATE SEQUENCE orders_id_seq START 1;
 CREATE SEQUENCE orders_pub_id_seq START 1;
 CREATE SEQUENCE orders_idemp_seq START 1;
@@ -163,7 +162,6 @@ CREATE INDEX orders_ts_27_int_12 ON public.orders USING btree (timestamp_null_27
 CREATE INDEX orders_ts_27_int_13 ON public.orders USING btree (timestamp_null_27,int_null_13 DESC) WITH (fillfactor='90') WHERE ((timestamp_null_27 IS NOT NULL) AND (int_null_13 IS NOT NULL));
 CREATE INDEX orders_ts_27_int_14 ON public.orders USING btree (timestamp_null_27,int_null_14 DESC) WITH (fillfactor='90') WHERE ((timestamp_null_27 IS NOT NULL) AND (int_null_14 IS NOT NULL));
 CREATE INDEX orders_ts_27_int_15 ON public.orders USING btree (timestamp_null_27,int_null_15 DESC) WITH (fillfactor='90') WHERE ((timestamp_null_27 IS NOT NULL) AND (int_null_15 IS NOT NULL));
-*/
 drop table orders1 cascade;
 create table orders1 as select * from orders where created_at > NOW() - '10 minute'::INTERVAL and created_at < NOW() + '10 minute'::INTERVAL;
 

@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  DB_HOST: ZGIuY3prNW5pNm9mYXhqLnVzLXdlc3QtMi5yZHMuYW1hem9uYXdzLmNvbQ==
+  DB_PASSWORD: QWRtaW4xMjM0IQ==
+  DB_USER: cG9zdGdyZXM=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: db-creds
+  namespace: default

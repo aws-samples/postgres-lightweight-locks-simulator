@@ -29,34 +29,5 @@ NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NO
 md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)
 )
 on conflict do nothing RETURNING id ;
-insert into orders1 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders2 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders3 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders4 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders5 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders6 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders7 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders8 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders9 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders10 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders11 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders12 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders13 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders14 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders15 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders16 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders17 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders18 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders19 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders20 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders21 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders22 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders23 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders24 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders25 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders26 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders27 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders28 select * from orders where id=(select max(id) from orders) on conflict do nothing;
-insert into orders29 select * from orders where id=(select max(id) from orders) on conflict do nothing;
 commit
 ;
