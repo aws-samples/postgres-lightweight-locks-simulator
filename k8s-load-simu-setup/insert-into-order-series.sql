@@ -27,5 +27,5 @@ floor(random() * 10000 + 1)::bigint,floor(random() * 10000 + 1)::bigint,floor(ra
 NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),
 md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)
 
-from generate_series(1,1000)
+from generate_series(1,100000)
 ;

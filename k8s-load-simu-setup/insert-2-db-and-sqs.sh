@@ -14,4 +14,5 @@ do
     aws sqs send-message --queue-url ${QUEUE_URL} --message-body "${id}" 
     echo "sqs exit code="$?
   fi
+  sleep `awk -v min=10 -v max=30 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
 done
