@@ -80,12 +80,12 @@ for i in $_seq; do
   prev_inserts=$inserts
   prev_updates=$updates
   sleeptime=`awk -v min=$MIN_SLEEP_BETWEEN_CYCLE -v max=$MAX_SLEEP_BETWEEN_CYCLE 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
+  echo "cleanning not ready nodes and faulty pods"
+  kubectl delete po `kubectl get po | egrep 'Evicted|ImagePullBackOff'| awk '{print $1}'`
+  aws ec2 terminate-instances --instance-ids `kubectl  get no -L alpha.eksctl.io/instance-id | grep NotReady | awk '{print $NF}'`
   sleep $sleeptime"m"
 done
 _seq=`seq 0.01 0.1 3.14`
 #_seq=`seq 0.01 0.2 2.85`
 echo "new cycle "$_seq
-echo "cleanning not ready nodes and faulty pods"
-kubectl delete po `kubectl get po | egrep 'Evicted|ImagePullBackOff'| awk '{print $1}'`
-aws ec2 terminate-instances --instance-ids `kubectl  get no -L alpha.eksctl.io/instance-id | grep NotReady | awk '{print $NF}'`
 done
