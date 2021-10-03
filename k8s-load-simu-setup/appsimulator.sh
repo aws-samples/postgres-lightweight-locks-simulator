@@ -1,5 +1,4 @@
 #!/bin/bash
-/init.sh
 #restore simulator state from SQS in the case of previous run
 sqs_file="/tmp/"$RANDOM".json"
 aws sqs receive-message --queue-url ${QUEUE_URL} > $sqs_file
@@ -86,4 +85,7 @@ done
 _seq=`seq 0.01 0.1 3.14`
 #_seq=`seq 0.01 0.2 2.85`
 echo "new cycle "$_seq
+echo "cleanning not ready nodes and faulty pods"
+kubectl delete po `kubectl get po | egrep 'Evicted|ImagePullBackOff'| awk '{print $1}'`
+aws ec2 terminate-instances --instance-ids `kubectl  get no -L alpha.eksctl.io/instance-id | grep NotReady | awk '{print $NF}'`
 done
