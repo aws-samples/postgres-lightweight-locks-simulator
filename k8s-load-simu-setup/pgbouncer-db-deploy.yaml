@@ -34,18 +34,6 @@ spec:
           env:
             - name: POOL_MODE
               value: transaction
-            - name: MAX_CLIENT_CONN
-              value: "8000"
-            - name: MAX_DB_CONNECTIONS
-              value: "210"
-            - name: DEFAULT_POOL_SIZE
-              value: "210"
-            - name: MIN_POOL_SIZE
-              value: "20"
-            - name: IDLE_TRANSACTION_TIMEOUT
-              value: "15"
-            - name: QUERY_WAIT_TIMEOUT
-              value: "66"
             - name: SERVER_RESET_QUERY
               value: DISCARD ALL
           livenessProbe:

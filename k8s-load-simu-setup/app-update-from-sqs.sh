@@ -23,7 +23,6 @@ do
     psql -A -e -t -U postgres -w -c "
 begin;
 update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where id = "$id" ;
-update orders1 set text_notnull_1=substr(md5(random()::text), 0, 25) where id = (select id from orders where id = (select floor(random() * max(id) + 1)::bigint from orders1) for update skip locked);
 commit;"
     echo "psql exit code="$?
     if (( $?>0 )) 
@@ -34,5 +33,4 @@ commit;"
       aws sqs delete-message --queue-url ${QUEUE_URL} --receipt-handle $receipt_handle
     fi
   fi
-  sleep `awk -v min=3 -v max=5 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
 done

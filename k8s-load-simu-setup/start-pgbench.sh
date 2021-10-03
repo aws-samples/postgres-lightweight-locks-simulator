@@ -1,5 +1,5 @@
 #!/bin/bash 
-/init.sh
+#/init.sh
 export PGPASSWORD=$DB_PASSWORD
 export PGHOST=$DBHOST
 export PGUSER=postgres

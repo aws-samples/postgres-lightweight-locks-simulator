@@ -1,5 +1,5 @@
 #!/bin/bash
-/init.sh
+#/init.sh
 #restore simulator state from SQS in the case of previous run
 sqs_file="/tmp/"$RANDOM".json"
 aws sqs receive-message --queue-url ${QUEUE_URL} > $sqs_file
@@ -38,7 +38,7 @@ for i in $_seq; do
   fi
   rm -f $sqs_file
   x=`echo $i|awk '{print $1}'`
-  sinx=`echo $i|awk '{print int(sin($1)*70)}'`
+  sinx=`echo $i|awk '{print int(sin($1)*90)}'`
   echo "sinx=" $sinx
   echo "i=" $i
   aws sqs send-message --queue-url ${QUEUE_URL} --message-body "$i"
@@ -51,7 +51,7 @@ for i in $_seq; do
   fi
 #end of pgbench case
 
-  updates=`echo $(( sinx * 2 + 4 ))`
+  updates=`echo $(( sinx * 3 + 1 ))`
   inserts=`echo $(( sinx * 3/2 + 1 ))`
   deploys=`kubectl get deploy | grep app| awk '{print $1}'`
   for deploy in $deploys
