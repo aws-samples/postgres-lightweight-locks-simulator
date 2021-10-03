@@ -37,7 +37,7 @@ for i in $_seq; do
   fi
   rm -f $sqs_file
   x=`echo $i|awk '{print $1}'`
-  sinx=`echo $i|awk '{print int(sin($1)*90)}'`
+  sinx=`echo $i|awk '{print int(sin($1)*110)}'`
   echo "sinx=" $sinx
   echo "i=" $i
   aws sqs send-message --queue-url ${QUEUE_URL} --message-body "$i"
@@ -81,8 +81,8 @@ for i in $_seq; do
   prev_updates=$updates
   sleeptime=`awk -v min=$MIN_SLEEP_BETWEEN_CYCLE -v max=$MAX_SLEEP_BETWEEN_CYCLE 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
   echo "cleanning not ready nodes and faulty pods"
-  kubectl delete po `kubectl get po | egrep 'Evicted|ImagePullBackOff'| awk '{print $1}'`
-  aws ec2 terminate-instances --instance-ids `kubectl  get no -L alpha.eksctl.io/instance-id | grep NotReady | awk '{print $NF}'`
+  kubectl delete po `kubectl get po | egrep 'Evicted|CrashLoopBackOff|CreateContainerError|ExitCode|OOMKilled|RunContainerError|Terminating'|awk '{print $1}'`
+  #aws ec2 terminate-instances --instance-ids `kubectl  get no -L alpha.eksctl.io/instance-id | grep NotReady | awk '{print $NF}'` --no-cli-pager
   sleep $sleeptime"m"
 done
 _seq=`seq 0.01 0.1 3.14`
