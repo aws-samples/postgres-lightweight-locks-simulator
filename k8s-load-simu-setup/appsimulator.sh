@@ -37,21 +37,22 @@ for i in $_seq; do
   fi
   rm -f $sqs_file
   x=`echo $i|awk '{print $1}'`
-  sinx=`echo $i|awk '{print int(sin($1)*90)}'`
+  sinx=`echo $i|awk '{print int(sin($1)*500)}'`
   echo "sinx=" $sinx
   echo "i=" $i
   aws sqs send-message --queue-url ${QUEUE_URL} --message-body "$i"
 
 #handle pgbench spike case
-  if (( $(echo "$i == 1.41" | bc -l ))) ; then
-    kubectl scale deploy pgbench --replicas=1  
-  else
-    kubectl scale deploy pgbench --replicas=0  
-  fi
+#  if (( $(echo "$i == 1.8" | bc -l ))) ; then
+#    kubectl scale deploy pgbench --replicas=1  
+#  else
+#    kubectl scale deploy pgbench --replicas=0  
+#  fi
 #end of pgbench case
 
-  updates=`echo $(( sinx * 3 + 1 ))`
-  inserts=`echo $(( sinx * 3/2 + 1 ))`
+  updates=`echo $(( sinx * 3 ))`
+  inserts=`echo $(( sinx * 3/2 ))`
+  pgbenchs=`echo $(( sinx / 10 ))`
   deploys=`kubectl get deploy | grep app| awk '{print $1}'`
   for deploy in $deploys
   do
@@ -75,14 +76,15 @@ for i in $_seq; do
         echo "updates="$updates" sinx="$sinx
       fi
    fi
+   kubectl scale deploy/pgbench --replicas=$pgbenchs
   done
 
   prev_inserts=$inserts
   prev_updates=$updates
   sleeptime=`awk -v min=$MIN_SLEEP_BETWEEN_CYCLE -v max=$MAX_SLEEP_BETWEEN_CYCLE 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
   echo "cleanning not ready nodes and faulty pods"
-  kubectl delete po `kubectl get po | egrep 'Evicted|ImagePullBackOff'| awk '{print $1}'`
-  aws ec2 terminate-instances --instance-ids `kubectl  get no -L alpha.eksctl.io/instance-id | grep NotReady | awk '{print $NF}'`
+  kubectl delete po `kubectl get po | egrep 'Evicted|CrashLoopBackOff|CreateContainerError|ExitCode|OOMKilled|RunContainerError'|awk '{print $1}'`
+  #aws ec2 terminate-instances --instance-ids `kubectl  get no -L alpha.eksctl.io/instance-id | grep NotReady | awk '{print $NF}'` --no-cli-pager
   sleep $sleeptime"m"
 done
 _seq=`seq 0.01 0.1 3.14`

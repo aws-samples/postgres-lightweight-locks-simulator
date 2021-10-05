@@ -16,7 +16,7 @@ spec:
             env:
               - name: DBHOST
                 value: "aa501bb12bde3437a87c195a9ed5edd7-8393eef865b22115.elb.us-west-2.amazonaws.com"
-            image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.2
+            image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.3
             imagePullPolicy: Always
             command: ["/vacuum.sh"]
           restartPolicy: OnFailure 
