@@ -28,7 +28,8 @@ commit;"
     if (( $?>0 )) 
     then
       echo "ERR-DB"
-      sleep `awk -v min=10 -v max=30 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
+      #sleep `awk -v min=10 -v max=30 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
+      sleep 5
     else
       aws sqs delete-message --queue-url ${QUEUE_URL} --receipt-handle $receipt_handle
     fi

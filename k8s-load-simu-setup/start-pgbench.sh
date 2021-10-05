@@ -6,5 +6,5 @@ export PGUSER=postgres
 
 pgbench -i
 
-pgbench -c 1000 -T 1000000 -f /pgbench-insert.sql 
-pgbench -c 1000 -T 1000000 -f /pgbench-update.sql 
+pgbench -c $CLIENTS -T $DURATION -f /pgbench-insert.sql 
+pgbench -c $CLIENTS -T $DURATION -f /pgbench-update.sql 
