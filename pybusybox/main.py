@@ -6,7 +6,7 @@ import datetime
 _sleeptime=int(os.environ['SLEEP_TIME'])
 
 def sighandler(signum,frame):
-  print('Signal handler called with signal',signum)
+  print('Signal handler was called with signal',signum)
 
 def main():
   while True:
