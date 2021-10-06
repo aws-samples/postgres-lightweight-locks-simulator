@@ -2,6 +2,11 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import signal
+import time
+
+def sighandler(signum,frame):
+  print('Signal hanlder called with signal',signum)
 
 
 def main():
@@ -19,4 +24,11 @@ def main():
 
 
 if __name__ == '__main__':
+    print('registering sighandler')
+    print(signal.SIGTERM)
+    signal.signal(signal.SIGTERM, sighandler)
+    print('registering sighandler')
+    print(signal.SIGINT)
+    signal.signal(signal.SIGINT, sighandler)
+    print('sighandlers are registered')
     main()
