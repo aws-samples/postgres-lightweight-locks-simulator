@@ -49,7 +49,7 @@ echo $(date): ${http_status}
 #aws sqs send-message --queue-url ${QUEUE_URL} --message-body "${MESSAGE}" --message-group-id ${MESSAGE_GRP_ID}
 
 echo "Draining the nodei due to spot rebalance recommendations."
-kubectl drain ${NODE_NAME} --force --ignore-daemonsets --delete-local-data
+kubectl drain ${NODE_NAME} --force --ignore-daemonsets --delete-emptydir-data
 
 echo "Sleep for 200 seconds to prevent raise condition"
 # The instance should be terminated by the end of the sleep assumming 120 sec notification time. Rebalance recommendations might take longer
