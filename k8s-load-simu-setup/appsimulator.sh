@@ -37,7 +37,7 @@ for i in $_seq; do
   fi
   rm -f $sqs_file
   x=`echo $i|awk '{print $1}'`
-  sinx=`echo $i|awk '{print int(sin($1)*500)}'`
+  sinx=`echo $i|awk '{print int(sin($1)*100)}'`
   echo "sinx=" $sinx
   echo "i=" $i
   aws sqs send-message --queue-url ${QUEUE_URL} --message-body "$i"
@@ -52,7 +52,7 @@ for i in $_seq; do
 
   updates=`echo $(( sinx * 3 ))`
   inserts=`echo $(( sinx * 3/2 ))`
-  pgbenchs=`echo $(( sinx / 10 ))`
+  pgbenchs=`echo $(( sinx / 15 ))`
   deploys=`kubectl get deploy | grep app| awk '{print $1}'`
   for deploy in $deploys
   do
