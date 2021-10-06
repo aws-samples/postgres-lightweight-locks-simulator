@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pybusywork
+  labels:
+    app: pybusywork
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pybusywork
+  template:
+    metadata:
+      labels:
+        app: pybusywork
+    spec:
+      nodeSelector:
+        lifecycle: Ec2Spot
+      containers:
+      - name: pybusywork
+        image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/pybusybox:0.1
+        imagePullPolicy: Always
+        env:
+          - name: SLEEP_TIME
+            value: "5"
+      terminationGracePeriodSeconds: 120
