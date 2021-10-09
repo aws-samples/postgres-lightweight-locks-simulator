@@ -42,13 +42,6 @@ for i in $_seq; do
   echo "i=" $i
   aws sqs send-message --queue-url ${QUEUE_URL} --message-body "$i"
 
-#handle pgbench spike case
-#  if (( $(echo "$i == 1.8" | bc -l ))) ; then
-#    kubectl scale deploy pgbench --replicas=1  
-#  else
-#    kubectl scale deploy pgbench --replicas=0  
-#  fi
-#end of pgbench case
 
   updates=`echo $(( sinx * 3 ))`
   inserts=`echo $(( sinx * 3/2 ))`
@@ -76,7 +69,12 @@ for i in $_seq; do
         echo "updates="$updates" sinx="$sinx
       fi
    fi
-   kubectl scale deploy/pgbench --replicas=$pgbenchs
+#handle pgbench spike case
+   if (( $(echo "$i == 2.51" | bc -l ))) ; then
+    pgbenchs=`echo $(( sinx / 5 ))`
+   fi
+    kubectl scale deploy/pgbench --replicas=$pgbenchs
+#end of pgbench case
   done
 
   prev_inserts=$inserts
