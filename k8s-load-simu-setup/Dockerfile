@@ -1,4 +1,5 @@
-FROM ubuntu
+FROM 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load-base:0.1
+/*FROM ubuntu
 RUN apt-get -y --fix-missing update
 RUN apt-get install -y curl vim unzip 
 
@@ -25,7 +26,7 @@ COPY config /root/.aws
 RUN curl -f -s -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
     chmod +x /usr/local/bin/kubectl && \
     kubectl version --client
-
+*/
 ADD app-insert.sh /app-insert.sh
 ADD appsimulator.sh /appsimulator.sh
 ADD insert-2-db-and-sqs.sh /insert-2-db-and-sqs.sh
@@ -74,7 +75,7 @@ ADD pg-io-snapshot.sh /pg-io-snapshot.sh
 ADD snapper_rds /snapper_rds
 
 #PGBENCH Install
-RUN apt-get install -y postgresql-contrib
+#RUN apt-get install -y postgresql-contrib
 ADD start-pgbench.sh /start-pgbench.sh 
 ADD pgbench-insert.sql /pgbench-insert.sql
 ADD pgbench-update.sql /pgbench-update.sql
@@ -84,4 +85,4 @@ ADD pgbench-insert-2.sql /pgbench-insert-2.sql
 ADD pgbench-update-2.sql /pgbench-update-2.sql
 ADD pgbench-insert-3.sql /pgbench-insert-3.sql
 ADD pgbench-update-3.sql /pgbench-update-3.sql
-RUN apt-get install -y bc
+#RUN apt-get install -y bc
