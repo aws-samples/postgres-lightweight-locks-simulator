@@ -32,4 +32,4 @@ md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEX
 on conflict do nothing; 
 ------------------------------------------
 commit;
-\sleep 2000 ms
+\sleep 4000 ms
