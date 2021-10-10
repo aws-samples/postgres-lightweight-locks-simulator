@@ -1,6 +1,6 @@
 begin;
 ------------------------------------------
-insert into orders(
+insert into orders1(
 created_at,
 updated_at,
 int_notnull_1, int_notnull_2, int_notnull_3, int_notnull_4, int_notnull_5, int_notnull_6, int_notnull_7, int_notnull_8, int_notnull_9, int_notnull_10,
