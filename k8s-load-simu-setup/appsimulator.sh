@@ -73,6 +73,7 @@ for i in $_seq; do
    if (( $(echo "$i == 2.51" | bc -l ))) ; then
     pgbenchs=`echo $(( sinx / 5 ))`
    fi
+    echo "pgbenchs="$pgbenchs" sinx="$sinx
     kubectl scale deploy/pgbench --replicas=$pgbenchs
 #end of pgbench case
   done
