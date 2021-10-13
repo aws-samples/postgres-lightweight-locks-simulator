@@ -8,3 +8,4 @@ git commit -m $branch_name
 git push --set-upstream origin $branch_name
 git checkout main
 git branch -d $branch_name
+git pull
