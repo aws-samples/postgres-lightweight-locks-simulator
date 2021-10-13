@@ -22,7 +22,7 @@ do
   else
     psql -A -e -t -U postgres -w -c "
 begin;
-update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where id = "$id" ;
+/*update from sqs*/update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where id = "$id" ;
 commit;"
     echo "psql exit code="$?
     if (( $?>0 )) 
