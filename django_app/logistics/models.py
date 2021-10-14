@@ -20,8 +20,8 @@ class Order(PostgresPartitionedModel):
     key = ["created_at"]
 
   uuid = models.UUIDField(null=False)
-  created_at = models.DateField(null=False)
-  updated_at = models.DateField(null=False)
+  created_at = models.DateTimeField(null=False)
+  updated_at = models.DateTimeField(null=False)
   product = models.UUIDField(null=False)
   merchant  = models.ForeignKey("Merchant", on_delete=models.CASCADE,null=True)
   customer = models.ForeignKey("Customer", on_delete=models.CASCADE,null=True)
@@ -33,8 +33,8 @@ class Delivery(PostgresPartitionedModel):
     key = ["created_at"]
 
   uuid = models.UUIDField(null=False)
-  created_at = models.DateField(null=False)
+  created_at = models.DateTimeField(null=False)
   method = models.CharField(max_length=50,null=False)
   status = models.CharField(max_length=50,null=True)
-  updated_at = models.DateField(null=False)
+  updated_at = models.DateTimeField(null=False)
   order_id = models.BigIntegerField(null=True)

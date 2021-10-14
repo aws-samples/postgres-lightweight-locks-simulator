@@ -6,7 +6,7 @@
       </div>
 
         {% for order in orders %}
-            <h2 class="mb4">Order: {{ order.uuid }} Created at: {{ order.created_at }} Updated at: {{ order.updated_at }} Product UUID: {{ order.product }}</h2>
+            <p class="mb4">Order: {{ order.uuid }} Created at: {{ order.created_at }} Updated at: {{ order.updated_at }} Product UUID: {{ order.product }}</p>
         {% endfor %}
 
 {% endblock %}

@@ -1,6 +1,7 @@
 
+`sudo -H pip3 install django`
 
-`pip install django psycopg2 django-postgres-extra`
+`pip3 install django psycopg2 django-postgres-extra django-sslserver`
 
 `django-admin startproject django_app`
 
@@ -32,8 +33,8 @@ https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-django
 ```sql
 truncate table logistics_delivery;
 truncate table logistics_order;
-trucate table logistics_customer;
-trucate table logistics_merchant;
+truncate table logistics_customer;
+truncate table logistics_merchant;
 SELECT setval('logistics_delivery_id_seq',1);
 SELECT setval('logistics_order_id_seq',1);
 SELECT setval('logistics_customer_id_seq',1);
@@ -41,8 +42,8 @@ SELECT setval('logistics_merchant_id_seq',1);
 
 insert into logistics_customer(uuid,first_name,last_name,address) select uuid_generate_v4(),md5(RANDOM()::TEXT),md5(RANDOM()::TEXT),md5(RANDOM()::TEXT) from generate_series(1,100);
 insert into logistics_merchant(uuid,name,address,license) select uuid_generate_v4(),md5(RANDOM()::TEXT),md5(RANDOM()::TEXT),md5(RANDOM()::TEXT) from generate_series(1,100);
-insert into logistics_order(uuid,created_at,updated_at,product,customer_id,merchant_id) select uuid_generate_v4(),NOW(),NOW(),uuid_generate_v4(),*,* from generate_series(1,100);
-insert into logistics_delivery(uuid,created_at,updated_at,method,order_id) select uuid_generate_v4(),NOW(),NOW(),md5(RANDOM()::TEXT),* from generate_series(1,100);
+insert into logistics_order(uuid,created_at,updated_at,product,customer_id,merchant_id) select uuid_generate_v4(),NOW(),NOW(),uuid_generate_v4(),*,* from generate_series(1,99);
+insert into logistics_delivery(uuid,created_at,updated_at,method,order_id) select uuid_generate_v4(),NOW(),NOW(),md5(RANDOM()::TEXT),* from generate_series(1,99);
 ```
 ### Configure secure ALB access
 
