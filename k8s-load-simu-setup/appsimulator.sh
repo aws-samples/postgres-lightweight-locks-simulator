@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 #restore simulator state from SQS in the case of previous run
 sqs_file="/tmp/"$RANDOM".json"
 aws sqs receive-message --queue-url ${QUEUE_URL} > $sqs_file
@@ -42,10 +42,15 @@ for i in $_seq; do
   echo "i=" $i
   aws sqs send-message --queue-url ${QUEUE_URL} --message-body "$i"
 
-
   updates=`echo $(( sinx * 3 ))`
   inserts=`echo $(( sinx * 3/2 ))`
   pgbenchs=`echo $(( sinx / 15 ))`
+  queue_size=`aws sqs get-queue-attributes --queue-url ${APP_QUEUE_URL} --attribute-names ApproximateNumberOfMessages| jq '.Attributes.ApproximateNumberOfMessages'|sed 's/"//g'`
+  echo "queue_size="$queue_size
+  if (( $queue_size >= 1000 )); then
+    updates=`echo $(( updates * 2 ))`
+    echo "queue_size was large - more update workers updates="$updates
+  fi
   deploys=`kubectl get deploy | grep app| awk '{print $1}'`
   for deploy in $deploys
   do
