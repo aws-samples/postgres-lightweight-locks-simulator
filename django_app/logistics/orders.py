@@ -2,12 +2,10 @@ from django.shortcuts import render
 from django.shortcuts import render
 from logistics.models import Customer, Merchant, Order, Delivery
 from django.db.models import Max
-from datetime import datetime
 from django.utils import timezone
 
 import uuid
 from random import randrange
-from datetime import date
 
 def authuser(request):
   max_cust_id=Customer.objects.all().aggregate(Max('id'))['id__max']
