@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: appselect-1
+  name: appselect-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appselect-1
+  template:
+    metadata:
+      labels:
+        app: appselect-1
+    spec:
+      #nodeSelector:
+      #  lifecycle: Ec2Spot
+      containers:
+        - name: appselect-1
+          envFrom:
+            - secretRef:
+                name: db-creds
+          env:
+              value: "db1.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.5
+          imagePullPolicy: Always
+          command: ["/app-load.sh"]
+          resources:
+            requests:
+              cpu: 512m
+              memory: 512Mi
+      hostNetwork: true
