@@ -27,6 +27,11 @@ INSTANCE_ID=$(curl -s ${INSTANCE_ID_URL})
 echo INSTANCE_ID_URL=${INSTANCE_ID_URL}
 echo INSTANCE_ID=${INSTANCE_ID}
 
+NODE=`curl -s 169.254.169.254/latest/meta-data/local-hostname`
+INSTANCE_ID=`curl -s 169.254.169.254/latest/meta-data/instance-id`
+
+kubectl label nodes ${NODE} instance-id=${INSTANCE_ID}
+
 echo "\`kubectl drain ${NODE_NAME}\` will be executed once a termination notice is made."
 
 
@@ -44,12 +49,13 @@ done
 echo $(date): "events/recommendations/rebalance"
 echo $(date): ${http_status}
 
-#MESSAGE="[{'status': 'spot termination', 'public_hostname': ${NODE_NAME}, 'public_port': NA, 'region': 'us-west'}]"
-#MESSAGE_GRP_ID="gsGrp_us-west-2"
-#aws sqs send-message --queue-url ${QUEUE_URL} --message-body "${MESSAGE}" --message-group-id ${MESSAGE_GRP_ID}
+DATETIME=`date`
+
+MESSAGE="[{'instance_id': $INSTANCE_ID,'status':'spot termination','public_hostname':${NODE_NAME},'datetime': ${DATETIME},'region':${AWS_DEFAULT_REGION}]"
+aws sqs send-message --queue-url ${QUEUE_URL} --message-body "${MESSAGE}"
 
 echo "Draining the nodei due to spot rebalance recommendations."
-kubectl drain ${NODE_NAME} --force --ignore-daemonsets --delete-emptydir-data
+#kubectl drain ${NODE_NAME} --force --ignore-daemonsets --delete-emptydir-data
 
 echo "Sleep for 200 seconds to prevent raise condition"
 # The instance should be terminated by the end of the sleep assumming 120 sec notification time. Rebalance recommendations might take longer

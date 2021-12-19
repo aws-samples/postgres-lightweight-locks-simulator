@@ -1,0 +1,27 @@
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: default
+spec:
+  limits:
+    resources:
+      cpu: 100k
+  provider:
+    apiVersion: extensions.karpenter.sh/v1alpha1
+    instanceProfile: KarpenterNodeInstanceProfile-dd-arm-us-west-2
+    kind: AWS
+    securityGroupSelector:
+      kubernetes.io/cluster/dd-arm-us-west-2: '*'
+    subnetSelector:
+      kubernetes.io/cluster/dd-arm-us-west-2: '*'
+  requirements:
+  - key: karpenter.sh/capacity-type
+    operator: In
+    values: 
+    - on-demand
+#    - spot
+  - key: kubernetes.io/arch
+    operator: In
+    values:
+    - arm64
+  ttlSecondsAfterEmpty: 30

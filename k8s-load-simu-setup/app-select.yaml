@@ -2,28 +2,29 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: appselect-1
-  name: appselect-1
+    app: appselect
+  name: appselect
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: appselect-1
+      app: appselect
   template:
     metadata:
       labels:
-        app: appselect-1
+        app: appselect
     spec:
-      #nodeSelector:
-      #  lifecycle: Ec2Spot
+      nodeSelector:
+        karpenter.sh/provisioner-name: default
       containers:
-        - name: appselect-1
+        - name: appselect
           envFrom:
             - secretRef:
                 name: db-creds
           env:
-              value: "db1.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
-          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.5
+            - name: DBHOST
+              value: "db2.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
           imagePullPolicy: Always
           command: ["/app-load.sh"]
           resources:
