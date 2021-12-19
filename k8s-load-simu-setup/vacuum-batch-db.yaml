@@ -20,4 +20,3 @@ spec:
             imagePullPolicy: Always
             command: ["/vacuum.sh"]
           restartPolicy: OnFailure 
-        #hostNetwork: true

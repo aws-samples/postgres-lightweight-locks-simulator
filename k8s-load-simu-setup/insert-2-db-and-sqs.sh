@@ -15,5 +15,5 @@ do
     echo "sqs exit code="$?
   fi
   #sleep `awk -v min=10 -v max=30 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
-  sleep 3
+  sleep 15
 done

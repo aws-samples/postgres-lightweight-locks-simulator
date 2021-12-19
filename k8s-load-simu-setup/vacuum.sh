@@ -15,7 +15,5 @@ if [ "$ret1" ]
 then
   echo $ret1" already running"
 else
-  psql -P pager=off -U postgres -w -c "
-vacuum freeze verbose orders;
-"
+  psql -P pager=off -U postgres -w -c "vacuum freeze verbose orders;"
 fi

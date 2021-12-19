@@ -67,22 +67,22 @@ spec:
       labels:
         app: appsimulator
     spec:
-      nodeSelector:
-        lifecycle: Ec2OnDemand
+#      nodeSelector:
+#        kubernetes.io/arch: arm64
       serviceAccountName: appsimulator
       containers:
       - env:
         - name: MIN_SLEEP_BETWEEN_CYCLE
-          value: "7"
+          value: "10"
         - name: MAX_SLEEP_BETWEEN_CYCLE
-          value: "9"
+          value: "12"
         - name: QUEUE_URL
-          value: "https://sqs.us-west-2.amazonaws.com/448389607377/vertscaler-state"
+          value: "https://sqs.us-west-2.amazonaws.com/448389607377/vertscaler-state-arm"
         - name: APP_QUEUE_URL
           value: "https://sqs.us-west-2.amazonaws.com/448389607377/db"
         - name: DEPLOY_NAME
           value: "appsimulator"
-        image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.5
+        image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
         imagePullPolicy: Always
         name: appsimulator
         command: ["/appsimulator.sh"]

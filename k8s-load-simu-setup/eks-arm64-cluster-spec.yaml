@@ -1,0 +1,27 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: dd-arm-us-west-2
+  region: us-west-2
+
+managedNodeGroups:
+  - name: armmanaged-ng-1
+    labels:  
+      project: doordash
+      nglb: armmanaged-ng-1
+    instanceTypes: ["c6g.xlarge","c6gn.xlarge","c6gd.xlarge","t4g.xlarge","m6gd.xlarge","m6g.xlarge","c6gd.2xlarge","c6gn.2xlarge","c6g.2xlarge","r6gd.xlarge","r6g.xlarge","m6gd.2xlarge","m6g.2xlarge","t4g.2xlarge","c6g.4xlarge","c6gd.4xlarge","c6gn.4xlarge"]
+    maxSize: 10
+    minSize: 1
+    ssh:
+      allow: true
+      publicKeyPath: ~/.ssh/id_rsa.pub
+    tags:
+      project: doordash
+      ngt: armmanaged-ng-1
+    iam:
+      withAddonPolicies:
+        cloudWatch: true
+        albIngress: true
+        externalDNS: true
+        certManager: true

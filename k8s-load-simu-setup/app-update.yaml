@@ -2,41 +2,37 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: appupdate-db
-  name: appupdate-db
+    app: appupdate
+  name: appupdate
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: appupdate-db
+      app: appupdate
   template:
     metadata:
       labels:
-        app: appupdate-db
+        app: appupdate
     spec:
-      #nodeSelector:
-      #  lifecycle: Ec2Spot
+      nodeSelector:
+        karpenter.sh/provisioner-name: default
       containers:
-        - name: appupdate-db
+        - name: appupdate
           envFrom:
             - secretRef:
                 name: db-creds
           env:
+            - name: DBHOST
+              value: "aa501bb12bde3437a87c195a9ed5edd7-8393eef865b22115.elb.us-west-2.amazonaws.com"
             - name: QUEUE_URL
               value: "https://sqs.us-west-2.amazonaws.com/448389607377/db"
             - name: NUM_OF_UPDATE_THREADS
               value: "60"
-            - name: DBHOST
-              #value: "db.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
-              value: "aa501bb12bde3437a87c195a9ed5edd7-8393eef865b22115.elb.us-west-2.amazonaws.com"
-          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.4
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
           imagePullPolicy: Always
           command: ["/app-update.sh"]
           resources:
             requests:
-              cpu: 512m
-              memory: 512Mi
-            limits:
               cpu: 512m
               memory: 512Mi
       hostNetwork: true

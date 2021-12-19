@@ -1,7 +1,7 @@
 #!/bin/sh
 KUBE_NAMESPACE="default"
 cd `dirname $0`
-secret_files=`find . -name "db*.secrets"`
+secret_files=`find . -name "db-creds.secrets"`
 for file in $secret_files
 do
   basename="$(basename $file)"

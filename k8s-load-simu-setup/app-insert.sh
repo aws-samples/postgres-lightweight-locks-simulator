@@ -1,5 +1,4 @@
 #!/bin/bash 
-#/init.sh
 n=$NUM_OF_INSERT_THREADS
 for ((i=1 ; i<=$n ; i++))
 do

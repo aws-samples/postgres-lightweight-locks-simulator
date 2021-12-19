@@ -23,7 +23,7 @@ prev_updates=0
 prev_selects=0
 
 #simulator sine wave range. From $j to 3.14 in 0.1 increments
-_seq=`seq $j 0.1 3.14`
+_seq=`seq $j 0.021 3.14`
 echo "first seq is "$_seq
 while true; do
 for i in $_seq; do
@@ -45,7 +45,7 @@ for i in $_seq; do
 
   updates=`echo $(( sinx * 3 ))`
   inserts=`echo $(( sinx * 3/2 ))`
-  selects=`echo $(( sinx / 20 ))`
+  selects=`echo $(( sinx / 5 ))`
   queue_size=`aws sqs get-queue-attributes --queue-url ${APP_QUEUE_URL} --attribute-names ApproximateNumberOfMessages| jq '.Attributes.ApproximateNumberOfMessages'|sed 's/"//g'`
   echo "queue_size="$queue_size
   if (( $queue_size >= 1000 )); then
@@ -56,34 +56,34 @@ for i in $_seq; do
   for deploy in $deploys
   do
    if [[ "$deploy" == "appinsert"* ]]; then
-      if (( $inserts == $prev_inserts && $sinx >= 99 )); then
-        echo 'skip long peaks'
-        continue
-      else
+      #if (( $inserts == $prev_inserts && $sinx >= 99 )); then
+      #  echo 'skip long peaks'
+      #  continue
+      #else
         kubectl scale deploy/$deploy --replicas=$inserts
         aws cloudwatch put-metric-data --metric-name current_inserts --namespace ${DEPLOY_NAME} --value ${inserts}
         echo "inserts="$inserts" sinx="$sinx
-      fi
+      #fi
    fi
    if [[ "$deploy" == "appupdate"* ]]; then
-      if (( $updates == $prev_updates && $sinx >= 99 )); then
-        echo 'skip long peaks'
-        continue
-      else
+      #if (( $updates == $prev_updates && $sinx >= 99 )); then
+      #  echo 'skip long peaks'
+      #  continue
+      #else
         kubectl scale deploy/$deploy --replicas=$updates
         aws cloudwatch put-metric-data --metric-name current_updates --namespace ${DEPLOY_NAME} --value ${updates}
         echo "updates="$updates" sinx="$sinx
-      fi
+      #fi
    fi
    if [[ "$deploy" == "appselect"* ]]; then
-      if (( $selects == $prev_selects && $sinx >= 99 )); then
-        echo 'skip long peaks'
-        continue
-      else
+      #if (( $selects == $prev_selects && $sinx >= 99 )); then
+      #  echo 'skip long peaks'
+      #  continue
+      #else
         kubectl scale deploy/$deploy --replicas=$selects
         aws cloudwatch put-metric-data --metric-name current_selects --namespace ${DEPLOY_NAME} --value ${selects}
         echo "selects="$selects" sinx="$sinx
-      fi
+      #fi
    fi
   done
 
@@ -93,10 +93,8 @@ for i in $_seq; do
   sleeptime=`awk -v min=$MIN_SLEEP_BETWEEN_CYCLE -v max=$MAX_SLEEP_BETWEEN_CYCLE 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
   echo "cleanning not ready nodes and faulty pods"
   kubectl delete po `kubectl get po | egrep 'Evicted|CrashLoopBackOff|CreateContainerError|ExitCode|OOMKilled|RunContainerError'|awk '{print $1}'`
-  #aws ec2 terminate-instances --instance-ids `kubectl  get no -L alpha.eksctl.io/instance-id | grep NotReady | awk '{print $NF}'` --no-cli-pager
   sleep $sleeptime"m"
 done
-_seq=`seq 0.01 0.1 3.14`
-#_seq=`seq 0.01 0.2 2.85`
+_seq=`seq 0.01 0.021 3.14`
 echo "new cycle "$_seq
 done
