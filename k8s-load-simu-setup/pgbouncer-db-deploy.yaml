@@ -24,6 +24,10 @@ spec:
             - secretRef:
                name: db-creds
           env:
+            - name: MAX_CLIENT_CONN
+              value: "10000"
+            - name: MAX_CONNECTIONS
+              value: "200"
             - name: POOL_MODE
               value: transaction
             - name: SERVER_RESET_QUERY
