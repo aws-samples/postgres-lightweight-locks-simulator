@@ -23,7 +23,7 @@ spec:
                 name: db-creds
           env:
             - name: DBHOST
-              value: "db2.czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
+              value: "eks-dd-arm-us-west-2-ro.endpoint.proxy-czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
           image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
           imagePullPolicy: Always
           command: ["/app-load.sh"]
