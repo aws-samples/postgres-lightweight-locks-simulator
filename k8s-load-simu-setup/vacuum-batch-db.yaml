@@ -1,9 +1,9 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: vacuum-db
 spec:
-  schedule: "0 * * * *"
+  schedule: "* * * * *"
   jobTemplate:
     spec:
       template:
@@ -15,8 +15,8 @@ spec:
                   name: db-creds 
             env:
               - name: DBHOST
-                value: "aa501bb12bde3437a87c195a9ed5edd7-8393eef865b22115.elb.us-west-2.amazonaws.com"
-            image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.3
+                value: "eks-dd-arm-us-west-2.endpoint.proxy-czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
+            image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
             imagePullPolicy: Always
             command: ["/vacuum.sh"]
           restartPolicy: OnFailure 
