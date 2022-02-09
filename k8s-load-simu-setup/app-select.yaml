@@ -24,7 +24,7 @@ spec:
           env:
             - name: DBHOST
               value: "eks-dd-arm-us-west-2-ro.endpoint.proxy-czk5ni6ofaxj.us-west-2.rds.amazonaws.com"
-          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
+          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.6
           imagePullPolicy: Always
           command: ["/app-load.sh"]
           resources:
