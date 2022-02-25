@@ -28,6 +28,6 @@ floor(random() * 10000 + 1)::bigint,floor(random() * 10000 + 1)::bigint,floor(ra
 NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),NOW(),
 md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)
 )
-on conflict do nothing RETURNING id ;
+on conflict do nothing RETURNING public_id,created_at;
 commit
 ;
