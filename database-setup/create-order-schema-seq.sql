@@ -1,11 +1,11 @@
-CREATE SEQUENCE orders_id_seq START 1;
 CREATE SEQUENCE orders_pub_id_seq START 1;
+CREATE SEQUENCE orders_id_seq START 1;
 CREATE SEQUENCE orders_idemp_seq START 1;
 CREATE SEQUENCE orders_uuid_seq START 1;
 
 CREATE TABLE public.orders (
-    id bigint DEFAULT nextval('public.orders_id_seq'::regclass) PRIMARY KEY,
-    public_id bigint DEFAULT nextval('public.orders_pub_id_seq'::regclass) NOT NULL,
+    public_id bigint DEFAULT nextval('public.orders_pub_id_seq'::regclass) PRIMARY KEY,
+    id bigint DEFAULT nextval('public.orders_id_seq'::regclass) NOT NULL,
     idempotency_key bigint DEFAULT nextval('public.orders_idemp_seq'::regclass) NOT NULL,
     orders_uuid bigint DEFAULT nextval('public.orders_uuid_seq'::regclass) NOT NULL,
     created_at timestamp with time zone NOT NULL,
