@@ -1,8 +1,12 @@
 apiVersion: v1
 data:
-  DB_HOST: ZGIuY3prNW5pNm9mYXhqLnVzLXdlc3QtMi5yZHMuYW1hem9uYXdzLmNvbQ==
+  DB_HOST: cGcuY3V6aXM4N2NqbGJxLnVzLXdlc3QtMi5yZHMuYW1hem9uYXdzLmNvbQ==
   DB_PASSWORD: QWRtaW4xMjM0IQ==
   DB_USER: cG9zdGdyZXM=
+  PGDATABASE: cG9zdGdyZXM=
+  PGHOST: cGdib3VuY2VyLTI4ZGU0NGVmMzYzM2ExNDcuZWxiLnVzLXdlc3QtMi5hbWF6b25hd3MuY29t
+  PGPASSWORD: QWRtaW4xMjM0IQ==
+  PGUSER: cGdib3VuY2Vy
 kind: Secret
 metadata:
   creationTimestamp: null

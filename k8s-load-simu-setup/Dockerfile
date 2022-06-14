@@ -1,4 +1,5 @@
-FROM 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load-base:arm0.2
+FROM 498254202105.dkr.ecr.us-west-2.amazonaws.com/simu-app-load-base:arm0.2
+#FROM 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load-base:arm0.2
 ADD app-insert.sh /app-insert.sh
 ADD appsimulator.sh /appsimulator.sh
 ADD insert-2-db-and-sqs.sh /insert-2-db-and-sqs.sh
@@ -7,6 +8,8 @@ ADD insert-2-db-and-sqs.sh /insert-2-db-and-sqs.sh
 ADD bulk-inserts.sh /bulk-inserts.sh
 ADD series-inserts.sh /series-inserts.sh
 ADD insert-into-order.sql /insert-into-order.sql
+ADD insert-into-order-small.sql /insert-into-order-small.sql
+ADD insert-into-order-small-series.sql /insert-into-order-small-series.sql
 
 #Scheduled vacuum
 ADD vacuum.sh /vacuum.sh

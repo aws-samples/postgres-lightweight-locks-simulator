@@ -23,8 +23,6 @@ prev_updates=0
 prev_selects=0
 
 #simulator sine wave range. From $j to 3.14 in 0.1 increments
-#0.021 for 24 hours wave length
-#0.168 for four hours wave length
 _seq=`seq $j 0.168 3.14`
 echo "first seq is "$_seq
 while true; do
@@ -47,7 +45,7 @@ for i in $_seq; do
 
   updates=`echo $(( sinx * 2 ))`
   inserts=`echo $(( sinx * 4/3 ))`
-  selects=`echo $(( sinx / 4 ))`
+  selects=`echo $(( sinx / 5 ))`
   queue_size=`aws sqs get-queue-attributes --queue-url ${APP_QUEUE_URL} --attribute-names ApproximateNumberOfMessages| jq '.Attributes.ApproximateNumberOfMessages'|sed 's/"//g'`
   echo "queue_size="$queue_size
   if (( $queue_size >= 1000 )); then

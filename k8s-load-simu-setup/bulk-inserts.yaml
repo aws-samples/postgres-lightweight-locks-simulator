@@ -14,19 +14,15 @@ spec:
       labels:
         app: bulk-inserts
     spec:
-      #nodeSelector:
-      #  lifecycle: Ec2Spot
       containers:
         - name: bulk-inserts
           envFrom:
             - secretRef:
                 name: db-creds
           env:
-            - name: NUM_OF_SINGLE_INSERTS
-              value: "42"
             - name: DBHOST
-              value: "aa501bb12bde3437a87c195a9ed5edd7-8393eef865b22115.elb.us-west-2.amazonaws.com"
-          image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:0.4
+              value: "db.cuzis87cjlbq.us-west-2.rds.amazonaws.com"
+          image: 498254202105.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
           imagePullPolicy: Always
           command: ["/bulk-inserts.sh"]
           resources:

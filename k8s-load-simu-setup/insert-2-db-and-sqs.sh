@@ -1,11 +1,8 @@
 #!/bin/bash 
 
-export PGPASSWORD=$DB_PASSWORD
-export PGHOST=$DBHOST
-
 while true
 do
-  id=`psql -A -q -t -U postgres -w -f insert-into-order.sql`
+  id=`psql -A -q -t -w -f insert-into-order-small.sql`
   echo "psql exit code="$?
   if [ -z "$id" ]
   then
