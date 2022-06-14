@@ -6,12 +6,14 @@ new_pgb_proc=0
 while true
 do
   #TODO - test the case of long running pods - more than hours
-  current_pod_age=$(kubectl get po $POD_NAME | awk '{print $NF}'|grep m | awk -F\m '{print $1}')
+  #Test of the pod is older enough - ok for running hours (h) or days (d), minutes (m) is an issue
+  current_pod_age=$(kubectl get po $POD_NAME | awk '{print $NF}'|grep m | awk -F\m '{if (($0~h)||($0~d)) print 2; else print $1}')
   if [ -z "$current_pod_age" ]
   then
     echo "current_pod_age is too young (empty); continue"
     continue
   fi
+  echo "current_pod_age="$current_pod_age
   if (( $current_pod_age < 5 ))
   then
     echo "too young pod; continue"
@@ -56,5 +58,5 @@ do
     kubectl scale deploy pgbouncer --replicas=$new_pgb_proc 
     new_pgb_proc=0
   fi
-  sleep $(awk -v min=900 -v max=1900 'BEGIN{srand(); print int(min+rand()*(max-min+1))}')
+  sleep $(awk -v min=240 -v max=360 'BEGIN{srand(); print int(min+rand()*(max-min+1))}')
 done
