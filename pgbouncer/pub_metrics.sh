@@ -17,9 +17,9 @@ do
   [[ ! -z "$value" ]] && { metric="SYN_RECV"; aws cloudwatch put-metric-data --metric-name $metric --namespace pgbouncer --value $value; }
 
   value=$(cat $netstat | grep LAST_ACK | awk '{print $2}')
-  [[ ! -z "$value" ]] && { metric="LAST_ACK"; aws cloudwatch put-metric-data --metric-name $metric --namespace pgbouncer --value $value; }
+  [[ ! -z "$value" ]] && { metric="LAST_ACK"; aws cloudwatch put-metric-data --metric-name $metric --namespace pgbouncer --value $value ; }
 
   value=$(cat $netstat | grep CLOSE_WAIT | awk '{print $2}')
-  [[ ! -z "$value" ]] && { metric="CLOSE_WAIT"; aws cloudwatch put-metric-data --metric-name $metric --namespace pgbouncer --value $value; }
+  [[ ! -z "$value" ]] && { metric="CLOSE_WAIT"; aws cloudwatch put-metric-data --metric-name $metric --namespace pgbouncer --value $value ; }
   sleep 60
 done

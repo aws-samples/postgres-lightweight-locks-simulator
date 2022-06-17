@@ -63,7 +63,8 @@ for i in $_seq; do
       #  continue
       #else
         kubectl scale deploy/$deploy --replicas=$inserts
-        aws cloudwatch put-metric-data --metric-name current_inserts --namespace ${DEPLOY_NAME} --value ${inserts}
+        aws cloudwatch put-metric-data --metric-name current_inserts --namespace ${DEPLOY_NAME} --value ${inserts} 
+        echo "sqs exit code="$?
         echo "inserts="$inserts" sinx="$sinx
       #fi
    fi
@@ -74,6 +75,7 @@ for i in $_seq; do
       #else
         kubectl scale deploy/$deploy --replicas=$updates
         aws cloudwatch put-metric-data --metric-name current_updates --namespace ${DEPLOY_NAME} --value ${updates}
+        echo "cloudwatch exit code="$?
         echo "updates="$updates" sinx="$sinx
       #fi
    fi
@@ -83,7 +85,8 @@ for i in $_seq; do
       #  continue
       #else
         kubectl scale deploy/$deploy --replicas=$selects
-        aws cloudwatch put-metric-data --metric-name current_selects --namespace ${DEPLOY_NAME} --value ${selects}
+        aws cloudwatch put-metric-data --metric-name current_selects --namespace ${DEPLOY_NAME} --value ${selects} --debug
+        echo "cloudwatch exit code="$?
         echo "selects="$selects" sinx="$sinx
       #fi
    fi
@@ -94,7 +97,7 @@ for i in $_seq; do
   prev_selects=$selects
   sleeptime=`awk -v min=$MIN_SLEEP_BETWEEN_CYCLE -v max=$MAX_SLEEP_BETWEEN_CYCLE 'BEGIN{srand(); print int(min+rand()*(max-min+1))}'`
   echo "cleanning not ready nodes and faulty pods"
-  kubectl delete po `kubectl get po | egrep 'Evicted|CrashLoopBackOff|CreateContainerError|ExitCode|OOMKilled|RunContainerError'|awk '{print $1}'`
+  kubectl delete po --force `kubectl get po | egrep 'Evicted|CrashLoopBackOff|CreateContainerError|ExitCode|OOMKilled|RunContainerError'|awk '{print $1}'`
   sleep $sleeptime"m"
 done
 _seq=`seq 0.01 0.168 3.14`

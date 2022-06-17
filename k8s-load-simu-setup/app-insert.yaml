@@ -27,7 +27,7 @@ spec:
             - name: QUEUE_URL
               value: "https://sqs.us-west-2.amazonaws.com/498254202105/db"
             - name: NUM_OF_INSERT_THREADS
-              value: "15"
+              value: "25"
           image: 498254202105.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
           imagePullPolicy: Always
           command: ["/app-insert.sh"]

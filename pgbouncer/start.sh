@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 set -euo pipefail
 
 PGB_DIR="/var/lib/postgresql/pgbouncer"
