@@ -30,3 +30,6 @@ ADD snapper_rds /snapper_rds
 ADD start-pgbench.sh /start-pgbench.sh 
 ADD pgbench-insert.sql /pgbench-insert.sql
 ADD pgbench-update.sql /pgbench-update.sql
+
+#Daemon Set
+ADD ds-start.sh /ds-start.sh

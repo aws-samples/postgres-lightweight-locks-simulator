@@ -20,14 +20,16 @@ RUN kubectl version --client
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN ./aws/install
-RUN mkdir /var/lib/postgresql/.aws
-COPY config /var/lib/postgresql/.aws
+RUN mkdir /root/.aws
+COPY config /root/.aws
 
 # Installed with pgbouncer
 USER postgres
 
 WORKDIR /var/lib/postgresql/pgbouncer
 
+RUN mkdir /var/lib/postgresql/.aws
+COPY config /var/lib/postgresql/.aws
 COPY ./start.sh /start.sh
 COPY ./pub_metrics.sh /pub_metrics.sh
 COPY ./adaptivepgbouncer.sh /adaptivepgbouncer.sh

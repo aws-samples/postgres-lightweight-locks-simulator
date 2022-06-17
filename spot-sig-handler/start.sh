@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Starting the spot int handler"
+TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
 
 if [ "${NAMESPACE}" == "" ]; then
   echo '[ERROR] Environment variable `NAMESPACE` has no value set.' 1>&2
@@ -14,6 +14,7 @@ fi
 
 echo "Getting the node name"
 NODE_NAME=$(kubectl --namespace ${NAMESPACE} get pod ${POD_NAME} --output jsonpath="{.spec.nodeName}")
+NODE=`curl -H "X-aws-ec2-metadata-token: $TOKEN" 169.254.169.254/latest/meta-data/local-hostname`
 echo NODE_NAME=${NODE_NAME}
 
 if [ "${NODE_NAME}" == "" ]; then
@@ -23,12 +24,10 @@ fi
 
 echo "Gather some information"
 INSTANCE_ID_URL=${INSTANCE_ID_URL:-http://169.254.169.254/latest/meta-data/instance-id}
-INSTANCE_ID=$(curl -s ${INSTANCE_ID_URL})
+INSTANCE_ID=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" ${INSTANCE_ID_URL})
 echo INSTANCE_ID_URL=${INSTANCE_ID_URL}
 echo INSTANCE_ID=${INSTANCE_ID}
 
-NODE=`curl -s 169.254.169.254/latest/meta-data/local-hostname`
-INSTANCE_ID=`curl -s 169.254.169.254/latest/meta-data/instance-id`
 
 kubectl label nodes ${NODE} instance-id=${INSTANCE_ID}
 
@@ -41,7 +40,7 @@ NOTICE_URL=${NOTICE_URL:-http://169.254.169.254/latest/meta-data/spot/terminatio
 
 echo "Polling ${NOTICE_URL} every ${POLL_INTERVAL} second(s)"
 
-while http_status=$(curl -o /dev/null -w '%{http_code}' -sL ${NOTICE_URL}); [ ${http_status} -ne 200 ]; do
+while http_status=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" -o /dev/null -w '%{http_code}' -sL ${NOTICE_URL}); [ ${http_status} -ne 200 ]; do
   echo $(date): ${http_status}
   sleep ${POLL_INTERVAL}
 done
