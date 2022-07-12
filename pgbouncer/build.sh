@@ -2,7 +2,7 @@
   
 account=$(aws sts get-caller-identity --output text --query Account)
 region="us-west-2"
-repo="pgbouncer"
+repo=pgbouncer
 repo_name='.dkr.ecr.'$region'.amazonaws.com/'$repo':1.12.0-3-aarch64'
 repo_url=$account$repo_name
 
