@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: appinsertpg
+  name: appinsertpg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appinsertpg
+  template:
+    metadata:
+      labels:
+        app: appinsertpg
+    spec:
+      nodeSelector:
+        karpenter.sh/provisioner-name: default
+      containers:
+        - name: appinsertpg
+          envFrom:
+            - secretRef:
+                name: pg-creds
+          env:
+            - name: QUEUE_URL
+              value: "https://sqs.us-west-2.amazonaws.com/498254202105/pg"
+            - name: NUM_OF_INSERT_THREADS
+              value: "25"
+          image: 498254202105.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:arm0.5
+          imagePullPolicy: Always
+          command: ["/app-insert.sh"]
+          resources:
+            requests:
+              cpu: 512m
+              memory: 512Mi
+      hostNetwork: true

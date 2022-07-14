@@ -62,7 +62,7 @@ spec:
         app: node-handler
     spec:
       nodeSelector:
-        karpenter.sh/provisioner-name: default
+        karpenter.sh/provisioner-name: pgbouncer
       serviceAccountName: node-handler
       containers:
       - name: node-handler

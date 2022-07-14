@@ -70,6 +70,8 @@ spec:
       labels:
         app: pgbouncer
     spec:
+      nodeSelector:
+        karpenter.sh/provisioner-name: pgbouncer
       serviceAccountName: adaptivepgbouncer
       containers:
         - name: pgbouncer
@@ -79,15 +81,25 @@ spec:
             - containerPort: 5432
           resources:
             requests:
-              cpu: 1024m
-              memory: 1024Mi
-              ephemeral-storage: 512Mi
+              cpu: 512m
+              memory: 512Mi
+            limits:
+              cpu: 512m
+              memory: 512Mi
           envFrom:
             - secretRef:
                name: pgbouncer
           env:
             - name: default_pool_size
               value: "20"
+            - name: log_connections
+              value: "0"
+            - name: log_disconnections
+              value: "0"
+            - name: log_pooler_errors
+              value: "0"
+            - name: log_stats
+              value: "0"
             - name: PGB_LISTEN_PORT
               value: "5432"
             - name: PGB_LISTEN_ADDR

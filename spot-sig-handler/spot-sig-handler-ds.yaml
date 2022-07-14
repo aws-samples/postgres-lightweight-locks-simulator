@@ -62,25 +62,12 @@ spec:
         app: spot-interrupt-handler
     spec:
       serviceAccountName: spot-interrupt-handler
-      #hostNetwork: true
+      nodeSelector:
+        karpenter.sh/provisioner-name: default
       containers:
       - name: spot-interrupt-handler
-        image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/spot-sig-handler:0.1arm
+        #image: 448389607377.dkr.ecr.us-west-2.amazonaws.com/spot-sig-handler:0.1arm
+        image: 259994957756.dkr.ecr.us-west-2.amazonaws.com/spot-sig-handler:0.1arm
         imagePullPolicy: Always
         command: ["/start.sh"]
-        env:
-        - name: QUEUE_URL
-          value: "https://sqs.us-west-2.amazonaws.com/448389607377/spot-sig"
-        - name: AWS_DEFAULT_REGION
-          value: "us-west-2"
-        - name: POD_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.name
-        - name: NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-#      nodeSelector:
-#        karpenter.sh/capacity-type: spot
 

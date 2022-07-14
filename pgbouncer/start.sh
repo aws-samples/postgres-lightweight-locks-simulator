@@ -25,6 +25,10 @@ cat <<- END > $INI
     listen_addr = ${PGB_LISTEN_ADDR:-0.0.0.0}
     auth_type = md5
     default_pool_size = $default_pool_size
+    log_connections = $log_connections
+    log_disconnections = $log_disconnections
+    log_pooler_errors = $log_pooler_errors
+    log_stats = $log_stats
     auth_file = $USERLIST
     logfile = $PGB_DIR/pgbouncer.log
     pidfile = $PGB_DIR/pgbouncer.pid
