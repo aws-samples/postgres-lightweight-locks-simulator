@@ -5,7 +5,7 @@ new_pgb_proc=0
 
 while true
 do
-  current_pod_age=$(kubectl get po $POD_NAME | awk '{print $NF}'|grep m |awk -F\m '{print $1}'| awk -F\h '{print $1}' | awk -F\d '{print $1}')
+  current_pod_age=$(kubectl get po $POD_NAME | awk '{print $NF}'|grep -E 'm|h' |awk -F\m '{print $1}'| awk -F\h '{print $1}' | awk -F\d '{print $1}')
   if [ -z "$current_pod_age" ]
   then
     echo "current_pod_age is too young (empty); continue"

@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: vacuum-pg
+  name: vacuum-pgp
 spec:
   schedule: "* * * * *"
   jobTemplate:
@@ -9,7 +9,7 @@ spec:
       template:
         spec:
           containers:
-          - name: vacuum-pg
+          - name: vacuum-pgp
             envFrom:
               - secretRef:
                   name: pgp-creds 

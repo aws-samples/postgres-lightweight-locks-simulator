@@ -41,3 +41,5 @@ done
 echo $(date): "events/recommendations/rebalance"
 echo $(date): ${http_status}
 
+echo "Draining the nodei due to spot rebalance recommendations."
+kubectl drain $NODE --force --ignore-daemonsets --delete-emptydir-data

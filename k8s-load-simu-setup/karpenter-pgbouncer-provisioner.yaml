@@ -1,7 +1,7 @@
 apiVersion: karpenter.sh/v1alpha5
 kind: Provisioner
 metadata:
-  name: default
+  name: pgbouncer
 spec:
   limits:
     resources:
@@ -11,7 +11,7 @@ spec:
     blockDeviceMappings:
       - deviceName: /dev/xvda
         ebs:
-          volumeSize: 100Gi
+          volumeSize: 50Gi
           volumeType: gp3
           iops: 10000
           deleteOnTermination: true

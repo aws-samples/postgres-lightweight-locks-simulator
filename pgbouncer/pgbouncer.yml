@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   PGB_ADMIN_PASSWORDS: QWRtaW4xMjM0IQ==
   PGB_ADMIN_USERS: cGdib3VuY2Vy
-  PGB_DATABASES: cG9zdGdyZXMgPSBob3N0PXBnLmN1emlzODdjamxicS51cy13ZXN0LTIucmRzLmFtYXpvbmF3cy5jb20gZGJuYW1lPXBvc3RncmVz
+  PGB_DATABASES: cG9zdGdyZXMgPSBob3N0PXBncC5jdXppczg3Y2psYnEudXMtd2VzdC0yLnJkcy5hbWF6b25hd3MuY29tIGRibmFtZT1wb3N0Z3Jlcw==
 kind: Secret
 metadata:
   creationTimestamp: null

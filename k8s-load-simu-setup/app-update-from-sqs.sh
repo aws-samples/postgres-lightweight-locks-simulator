@@ -15,7 +15,7 @@ do
   ret_val=`cat $sqs_file | jq '.Messages[].Body'|sed 's/"//g'`
   public_id=`echo $ret_val | awk -F\| '{print $1}'`
 # uncomment with partitionning
-#  created_at=`echo $ret_val | awk -F\| '{print $2}'`
+  created_at=`echo $ret_val | awk -F\| '{print $2}'`
   if [ -z "$public_id" ]
   then
     echo "EMPTY-SQS"
@@ -23,9 +23,7 @@ do
   else
     psql -A -e -t -w -c "
 begin;
--- uncomment with partitionning
--- /*update from sqs*/update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where public_id = "$public_id" and created_at='""$created_at""';
-/*update from sqs*/update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where public_id = "$public_id";
+/*update from sqs*/update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where public_id = "$public_id" and created_at='""$created_at""';
 commit;"
     echo "psql exit code="$?
     if (( $?>0 )) 

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: appupdatepgp
+  name: appupdatepgp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appupdatepgp
+  template:
+    metadata:
+      labels:
+        app: appupdatepgp
+    spec:
+      nodeSelector:
+        karpenter.sh/provisioner-name: default
+      containers:
+        - name: appupdatepgp
+          envFrom:
+            - secretRef:
+                name: pgp-creds
+          env:
+            - name: QUEUE_URL
+              value: "https://sqs.us-west-2.amazonaws.com/498254202105/pgp"
+            - name: NUM_OF_UPDATE_THREADS
+              value: "60"
+          image: 498254202105.dkr.ecr.us-west-2.amazonaws.com/simu-app-load:partarm0.7
+          imagePullPolicy: Always
+          command: ["/app-update.sh"]
+          resources:
+            requests:
+              cpu: 512m
+              memory: 512Mi
+            limits:
+              cpu: 512m
+              memory: 512Mi
+      hostNetwork: true
