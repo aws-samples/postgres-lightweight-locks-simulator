@@ -21,6 +21,7 @@ fi
 echo INSTANCE_TYPE=$INSTANCE_TYPE
 echo aws cloudwatch put-metric-data --metric-name $INSTANCE_TYPE --namespace pgbouncer --value 1 
 aws cloudwatch put-metric-data --metric-name $INSTANCE_TYPE --namespace pgbouncer --value 1 
+aws cloudwatch put-metric-data --metric-name node_count --namespace pgbouncer --value 1 
 echo "cloudwatch exit code="$?
 if (( $?>0 ))
 then
