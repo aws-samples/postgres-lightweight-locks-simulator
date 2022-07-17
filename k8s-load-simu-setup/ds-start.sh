@@ -19,13 +19,6 @@ then
   exit
 fi
 echo INSTANCE_TYPE=$INSTANCE_TYPE
-echo aws cloudwatch put-metric-data --metric-name $INSTANCE_TYPE --namespace pgbouncer --value 1 
-aws cloudwatch put-metric-data --metric-name $INSTANCE_TYPE --namespace pgbouncer --value 1 
-echo "cloudwatch exit code="$?
-if (( $?>0 ))
-then
-  echo "ERR-CW"
-fi
 
 
 POLL_INTERVAL=${POLL_INTERVAL:-5}
@@ -35,6 +28,18 @@ echo "Polling ${NOTICE_URL} every ${POLL_INTERVAL} second(s)"
 
 while http_status=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" -o /dev/null -w '%{http_code}' -sL ${NOTICE_URL}); [ ${http_status} -ne 200 ]; do
   echo $(date): ${http_status}
+  aws cloudwatch put-metric-data --metric-name $INSTANCE_TYPE --namespace pgbouncer --value 1 
+  echo "cloudwatch exit code="$?
+  if (( $?>0 ))
+  then
+    echo "ERR-CW"
+  fi
+  aws cloudwatch put-metric-data --metric-name node_count --namespace pgbouncer --value 1 
+  echo "cloudwatch exit code="$?
+  if (( $?>0 ))
+  then
+    echo "ERR-CW"
+  fi
   sleep ${POLL_INTERVAL}
 done
 
