@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
 if [ -z "$TOKEN" ]
 then
@@ -28,13 +28,13 @@ echo "Polling ${NOTICE_URL} every ${POLL_INTERVAL} second(s)"
 
 while http_status=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" -o /dev/null -w '%{http_code}' -sL ${NOTICE_URL}); [ ${http_status} -ne 200 ]; do
   echo $(date): ${http_status}
-  aws cloudwatch put-metric-data --metric-name $INSTANCE_TYPE --namespace pgbouncer --value 1 
+  aws cloudwatch put-metric-data --metric-name $INSTANCE_TYPE --namespace $DEPLOY --value 1 
   echo "cloudwatch exit code="$?
   if (( $?>0 ))
   then
     echo "ERR-CW"
   fi
-  aws cloudwatch put-metric-data --metric-name node_count --namespace pgbouncer --value 1 
+  aws cloudwatch put-metric-data --metric-name $DEPLOY"_node_count" --namespace $DEPLOY --value 1 
   echo "cloudwatch exit code="$?
   if (( $?>0 ))
   then
