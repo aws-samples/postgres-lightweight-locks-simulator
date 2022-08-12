@@ -5,18 +5,16 @@ new_pgb_proc=0
 
 while true
 do
-  current_pod_age=$(kubectl get po $POD_NAME | awk '{print $NF}'|grep -E 'm|h' |awk -F\m '{print $1}'| awk -F\h '{print $1}' | awk -F\d '{print $1}')
-  if [ -z "$current_pod_age" ]
+  pod_start_str=$(kubectl get po $POD_NAME -o jsonpath="{..status.containerStatuses[].state.running.startedAt}")
+  pod_start_sec=$(date --date $pod_start_str "+%s")
+  pod_now_sec=$(date "+%s")
+  pod_age_sec=$(echo $(( (pod_now_sec-pod_start_sec) / 60 )))
+  if (( $pod_age_sec < 3 ))
   then
-    echo "current_pod_age is too young (empty); continue"
+    echo "pod is too young pod_age_sec is "$pod_age_sec
     continue
   fi
-  echo "current_pod_age="$current_pod_age
-  if (( $current_pod_age < 5 ))
-  then
-    echo "too young pod; continue"
-    continue
-  fi
+
   current_pgb_proc=$(kubectl get deploy pgbouncer | grep -v NAME| awk '{print $3}')
   current_n_conn=$(echo $(( $current_pgb_proc * $n_db_conn ))) 
   echo "current_pgb_proc="$current_pgb_proc
