@@ -3,9 +3,9 @@ FROM public.ecr.aws/amazonlinux/amazonlinux:2022
 RUN yum -y update 
 RUN yum install -y tar net-tools curl vim unzip less libevent-devel openssl-devel python-devel libtool git patch make
 RUN git clone https://github.com/pgbouncer/pgbouncer.git --branch "pgbouncer_1_15_0" && \
-    git clone https://github.com/awslabs/pgbouncer-rr-patch.git && \
-    cd pgbouncer-rr-patch && \
-    ./install-pgbouncer-rr-patch.sh ../pgbouncer && \
+#    git clone https://github.com/awslabs/pgbouncer-rr-patch.git && \
+#    cd pgbouncer-rr-patch && \
+#    ./install-pgbouncer-rr-patch.sh ../pgbouncer && \
     cd ../pgbouncer && \
     git submodule init && \
     git submodule update && \

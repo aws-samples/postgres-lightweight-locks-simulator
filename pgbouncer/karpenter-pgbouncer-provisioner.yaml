@@ -1,0 +1,37 @@
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: pgbouncer
+spec:
+  limits:
+    resources:
+      cpu: 1000k
+  provider:
+    amiFamily: AL2
+    blockDeviceMappings:
+      - deviceName: /dev/xvda
+        ebs:
+          volumeSize: 50Gi
+          volumeType: gp3
+          iops: 10000
+          deleteOnTermination: true
+          throughput: 125
+    apiVersion: extensions.karpenter.sh/v1alpha1
+    instanceProfile: KarpenterNodeInstanceProfile-orders-us-west-2
+    kind: AWS
+    securityGroupSelector:
+      Name: '*ClusterSharedNodeSecurityGroup'
+      #kubernetes.io/cluster/orders-us-west-2: 'owned'
+    subnetSelector:
+      kubernetes.io/cluster/orders-us-west-2: '*'
+  requirements:
+  - key: karpenter.sh/capacity-type
+    operator: In
+    values: 
+    - on-demand
+#    - spot
+  - key: kubernetes.io/arch
+    operator: In
+    values:
+    - arm64
+  ttlSecondsAfterEmpty: 30

@@ -7,6 +7,6 @@ repo_name='.dkr.ecr.'$region'.amazonaws.com/'$repo':1.15-aarch64'
 repo_url=$account$repo_name
 
 aws ecr get-login-password --region $region | docker login --username AWS --password-stdin $repo_url
-docker build -t $repo -f ./Dockerfile .
+docker build -t $repo -f ./Dockerfile.Pgbouncer.rrc .
 docker tag $repo:latest $repo_url
 docker push $repo_url

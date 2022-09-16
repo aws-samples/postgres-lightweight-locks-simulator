@@ -31,8 +31,9 @@ do
   echo "established_conn="$established_conn
   if [ -z "$established_conn" ] 
   then 
-    echo "established_conn is empty; continue"
-    continue
+    echo "established_conn is empty; set artificial established_conn"
+    established_conn=10
+    #continue
   fi
   echo "n_db_conn="$n_db_conn
   echo "handling scale up"
