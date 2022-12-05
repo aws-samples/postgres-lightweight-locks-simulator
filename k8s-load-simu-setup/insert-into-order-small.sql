@@ -24,7 +24,7 @@ NOW(),
 md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)||md5(RANDOM()::TEXT)
 )
 --uncomment with partitionning
-on conflict do nothing RETURNING public_id,created_at;
+on conflict do nothing RETURNING id,created_at;
 --on conflict do nothing RETURNING public_id;
 commit
 ;

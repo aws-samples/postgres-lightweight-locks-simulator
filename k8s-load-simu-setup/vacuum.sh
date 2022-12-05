@@ -1,7 +1,4 @@
 #!/bin/bash
-export PGHOST=$DB_HOST
-export PGUSER=$DB_USER
-export PGPASSWORD=$DB_PASSWORD
 echo `date`
 ret=`psql -P pager=off -w -c "select query from pg_stat_activity where query like 'vacuum freeze verbose orders;';"`
 if (( $?>0 ))

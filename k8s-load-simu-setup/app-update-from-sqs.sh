@@ -13,17 +13,17 @@ do
   fi
   receipt_handle=`cat $sqs_file | jq '.Messages[].ReceiptHandle'|sed 's/"//g'`
   ret_val=`cat $sqs_file | jq '.Messages[].Body'|sed 's/"//g'`
-  public_id=`echo $ret_val | awk -F\| '{print $1}'`
+  id=`echo $ret_val | awk -F\| '{print $1}'`
 # uncomment with partitionning
   created_at=`echo $ret_val | awk -F\| '{print $2}'`
-  if [ -z "$public_id" ]
+  if [ -z "$id" ]
   then
     echo "EMPTY-SQS"
     continue
   else
     psql -A -e -t -w -c "
 begin;
-/*update from sqs*/update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where public_id = "$public_id" and created_at='""$created_at""';
+/*update from sqs*/update orders set text_notnull_1=substr(md5(random()::text), 0, 25) where id = "$id" and created_at='""$created_at""';
 commit;"
     echo "psql exit code="$?
     if (( $?>0 )) 
