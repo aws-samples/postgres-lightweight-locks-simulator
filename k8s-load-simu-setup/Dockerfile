@@ -1,4 +1,4 @@
-FROM 498254202105.dkr.ecr.us-west-2.amazonaws.com/simu-app-load-base:arm0.2
+FROM 124902971876.dkr.ecr.us-west-2.amazonaws.com/simu-app-load-base:aarch64
 ADD app-insert.sh /app-insert.sh
 ADD appsimulator.sh /appsimulator.sh
 ADD insert-2-db-and-sqs.sh /insert-2-db-and-sqs.sh
@@ -32,3 +32,6 @@ ADD pgbench-update.sql /pgbench-update.sql
 
 #Daemon Set
 ADD ds-start.sh /ds-start.sh
+
+#PSQL client config
+ADD psqlrc /.psqlrc
